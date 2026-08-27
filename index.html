@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidhyasri A | Portfolio</title>
+    <meta name="description" content="Personal portfolio of Vidhyasri A - B.Com Student at Kumaraguru College of Liberal Arts and Science, interested in Finance and Creative Arts.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Scroll Reveals -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        mulberry: '#A20067',
+                        kobi: '#E79FC4',
+                        azure: '#007FFF',
+                        darkBg: '#090D16',
+                        darkCard: '#111827'
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #090D16;
+            color: #F3F4F6;
+            overflow-x: hidden;
+        }
+        .glow-bg {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.15;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .bento-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(231, 159, 196, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            border-color: rgba(0, 127, 255, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px -10px rgba(0, 127, 255, 0.2);
+        }
+        .custom-gradient-text {
+            background: linear-gradient(135deg, #A20067 0%, #E79FC4 50%, #007FFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .custom-gradient-btn {
+            background: linear-gradient(135deg, #A20067 0%, #007FFF 100%);
+            transition: all 0.3s ease;
+        }
+        .custom-gradient-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(0, 127, 255, 0.4);
+        }
+        .glass-nav {
+            background: rgba(9, 13, 22, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(231, 159, 196, 0.05);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Background Glow Blobs -->
+    <div class="glow-bg bg-azure top-[-100px] left-[-100px]"></div>
+    <div class="glow-bg bg-mulberry bottom-[10%] right-[-100px]"></div>
+    <div class="glow-bg bg-kobi top-[40%] left-[30%]"></div>
+
+    <!-- Navigation Header -->
+    <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold tracking-tight custom-gradient-text">Vidhyasri A</a>
+            <div class="flex items-center space-x-6">
+                <a href="#about" class="text-gray-300 hover:text-azure transition-colors font-medium">About</a>
+                <a href="#skills" class="text-gray-300 hover:text-kobi transition-colors font-medium">Skills</a>
+                <a href="#protosem" class="text-gray-300 hover:text-azure transition-colors font-medium">ProtoSem</a>
+                <a href="resume.html" target="_blank" class="px-4 py-2 rounded-full border border-kobi/30 text-sm font-semibold hover:border-azure hover:text-azure transition-all duration-300">Resume <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-12 px-6">
+        <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Info Content -->
+            <div class="lg:col-span-7 text-center lg:text-left z-10" data-aos="fade-right">
+                <span class="inline-block px-3 py-1 bg-mulberry/10 border border-mulberry/30 text-kobi text-xs font-bold uppercase tracking-wider rounded-full mb-6">Welcome to my space</span>
+                <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-4">
+                    Hi, I'm <span class="custom-gradient-text">Vidhyasri A</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-medium text-gray-300 mb-6 h-12">
+                    <span id="typed-text"></span>
+                </h2>
+                <p class="text-gray-400 text-lg leading-relaxed max-w-xl mb-8">
+                    An enthusiastic Commerce student at Kumaraguru College of Liberal Arts and Science, combining analytical logic with creative expression. Driven by a deep interest in finance and styled by a passion for visual arts.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                    <a href="#portfolio" class="px-8 py-3.5 rounded-full text-white font-semibold custom-gradient-btn shadow-lg shadow-mulberry/20 flex items-center gap-2">
+                        Explore Portfolio <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                    <a href="resume.html" target="_blank" class="px-8 py-3.5 rounded-full border border-gray-600 text-gray-300 font-semibold hover:border-azure hover:text-white transition-colors duration-300 flex items-center gap-2">
+                        View Resume <i class="fa-solid fa-file-pdf"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right 3D Tilt Card Section -->
+            <div class="lg:col-span-5 flex justify-center z-10" data-aos="zoom-in" data-aos-delay="100">
+                <div class="w-full max-w-sm bento-card rounded-3xl p-8 relative flex flex-col items-center justify-center text-center overflow-hidden border border-kobi/20" data-tilt data-tilt-max="12" data-tilt-glare="true" data-tilt-max-glare="0.3">
+                    <!-- Failsafe Avatar -->
+                    <div class="relative mb-6">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-mulberry via-kobi to-azure blur-md opacity-70 animate-pulse"></div>
+                        <img src="https://ui-avatars.com/api/?name=Vidhyasri+A&background=random&size=256" alt="Vidhyasri A" class="relative w-36 h-36 rounded-full border-4 border-darkBg object-cover shadow-2xl">
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-1">Vidhyasri A</h3>
+                    <p class="text-sm text-azure font-medium mb-4">B.Com Undergraduate</p>
+                    <div class="flex items-center justify-center gap-2 text-xs text-gray-400 mb-6 bg-darkBg/50 px-3 py-1.5 rounded-full border border-gray-800">
+                        <i class="fa-solid fa-location-dot text-kobi"></i> Coimbatore, India
+                    </div>
+                    <div class="flex justify-center gap-4 w-full border-t border-gray-800 pt-6">
+                        <a href="https://github.com/vidhyasri2410" target="_blank" class="w-10 h-10 rounded-full bg-darkBg/60 flex items-center justify-center text-gray-300 hover:text-white hover:bg-azure transition-colors duration-300 border border-gray-800">
+                            <i class="fa-brands fa-github text-lg"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/vidhyasri-a-1479a7371?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="w-10 h-10 rounded-full bg-darkBg/60 flex items-center justify-center text-gray-300 hover:text-white hover:bg-azure transition-colors duration-300 border border-gray-800">
+                            <i class="fa-brands fa-linkedin-in text-lg"></i>
+                        </a>
+                        <a href="mailto:vidhyasri1024@gmail.com" class="w-10 h-10 rounded-full bg-darkBg/60 flex items-center justify-center text-gray-300 hover:text-white hover:bg-azure transition-colors duration-300 border border-gray-800">
+                            <i class="fa-regular fa-envelope text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Bento Grid Section -->
+    <section id="portfolio" class="py-24 px-6 max-w-6xl mx-auto relative z-10">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-3">Interactive Showcase</h2>
+            <p class="text-gray-400 max-w-lg mx-auto">Explore the Bento Grid detailing my studies, skills, passions, and creative output.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Card 1: About Me (Double Width) -->
+            <div id="about" class="bento-card rounded-3xl p-8 md:col-span-2 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-mulberry/10 border border-mulberry/20 flex items-center justify-center text-kobi mb-6">
+                        <i class="fa-solid fa-user text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">About My Journey</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        I am currently pursuing a Bachelor of Commerce (B.Com) at <strong>Kumaraguru College of Liberal Arts and Science</strong>. My academic foundation focuses on financial management, commercial laws, and economic concepts. Beyond spreadsheets and reports, I bring a unique creative perspective powered by visual drawing and painting, allowing me to view complex problem-solving from both analytical and artistic angles.
+                    </p>
+                </div>
+                <div class="mt-8 flex items-center gap-4 text-xs font-semibold uppercase tracking-wider text-azure">
+                    <span>Active Learning</span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-azure animate-ping"></span>
+                </div>
+            </div>
+
+            <!-- Card 2: Hobbies / Art (Single Width) -->
+            <div class="bento-card rounded-3xl p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-kobi/10 border border-kobi/20 flex items-center justify-center text-kobi mb-6">
+                        <i class="fa-solid fa-palette text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Creative Expression</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        Drawing and painting are my creative outlets. They train my eye for detail, patience, and visual design—skills I bring into financial report design and presentations.
+                    </p>
+                </div>
+                <div class="border-t border-gray-800/60 pt-4 flex justify-between items-center text-sm text-gray-400">
+                    <span>Hobbies</span>
+                    <div class="flex gap-2">
+                        <span class="px-2 py-1 bg-darkBg rounded-md text-xs border border-gray-800 text-gray-300">Drawing</span>
+                        <span class="px-2 py-1 bg-darkBg rounded-md text-xs border border-gray-800 text-gray-300">Painting</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Honors & Certifications (Single Width) -->
+            <div class="bento-card rounded-3xl p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-azure/10 border border-azure/20 flex items-center justify-center text-azure mb-6">
+                        <i class="fa-solid fa-trophy text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Honors & Certs</h3>
+                    <ul class="space-y-4 mb-4">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-medal text-kobi mt-1 animate-pulse"></i>
+                            <div>
+                                <span class="text-sm font-semibold text-white block">Mahatma Gandhi Scholarship</span>
+                                <span class="text-xs text-gray-400">Academic Honors & Award</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-award text-azure mt-1"></i>
+                            <div>
+                                <span class="text-sm font-semibold text-white block">Effective Leadership</span>
+                                <span class="text-xs text-gray-400">HP LIFE</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-award text-kobi mt-1"></i>
+                            <div>
+                                <span class="text-sm font-semibold text-white block">Digital Business Skills</span>
+                                <span class="text-xs text-gray-400">HP LIFE</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-award text-azure mt-1"></i>
+                            <div>
+                                <span class="text-sm font-semibold text-white block">Contract Management</span>
+                                <span class="text-xs text-gray-400">TCS iON</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="border-t border-gray-800/60 pt-4 flex flex-wrap gap-2">
+                    <span class="px-2 py-0.5 bg-darkBg rounded-md text-[10px] border border-gray-800 text-azure font-medium">Honors</span>
+                    <span class="px-2 py-0.5 bg-darkBg rounded-md text-[10px] border border-gray-800 text-kobi font-medium">HP LIFE</span>
+                    <span class="px-2 py-0.5 bg-darkBg rounded-md text-[10px] border border-gray-800 text-white font-medium">TCS</span>
+                </div>
+            </div>
+
+            <!-- Card 4: Skills Matrix (Double Width) -->
+            <div id="skills" class="bento-card rounded-3xl p-8 md:col-span-2 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="400">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-azure/10 border border-azure/20 flex items-center justify-center text-azure mb-6">
+                        <i class="fa-solid fa-sliders text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-6">Core Competencies & Soft Skills</h3>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Soft Skills</h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span class="text-gray-200">Teamwork & Collaboration</span>
+                                        <span class="text-kobi font-semibold">90%</span>
+                                    </div>
+                                    <div class="w-full bg-darkBg h-2 rounded-full overflow-hidden border border-gray-800">
+                                        <div class="bg-gradient-to-r from-mulberry to-kobi h-full rounded-full" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span class="text-gray-200">Problem Solving</span>
+                                        <span class="text-azure font-semibold">85%</span>
+                                    </div>
+                                    <div class="w-full bg-darkBg h-2 rounded-full overflow-hidden border border-gray-800">
+                                        <div class="bg-gradient-to-r from-kobi to-azure h-full rounded-full" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-sm mb-1">
+                                        <span class="text-gray-200">Management & Coordination</span>
+                                        <span class="text-kobi font-semibold">80%</span>
+                                    </div>
+                                    <div class="w-full bg-darkBg h-2 rounded-full overflow-hidden border border-gray-800">
+                                        <div class="bg-gradient-to-r from-mulberry to-kobi h-full rounded-full" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Functional / Domain</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-2.5 text-gray-300 bg-darkBg/60 p-2.5 rounded-xl border border-gray-800">
+                                    <i class="fa-solid fa-calculator text-kobi w-5 text-center"></i>
+                                    <span class="text-sm font-medium">Financial Accounting</span>
+                                </div>
+                                <div class="flex items-center gap-2.5 text-gray-300 bg-darkBg/60 p-2.5 rounded-xl border border-gray-800">
+                                    <i class="fa-regular fa-file-excel text-azure w-5 text-center"></i>
+                                    <span class="text-sm font-medium">Spreadsheet Management (MS Excel)</span>
+                                </div>
+                                <div class="flex items-center gap-2.5 text-gray-300 bg-darkBg/60 p-2.5 rounded-xl border border-gray-800">
+                                    <i class="fa-solid fa-shapes text-kobi w-5 text-center"></i>
+                                    <span class="text-sm font-medium">Visual Presentation & Slide Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Connect & Resume (Single Width) -->
+            <div class="bento-card rounded-3xl p-8 flex flex-col justify-between bg-gradient-to-br from-darkCard to-mulberry/10" data-aos="fade-up" data-aos-delay="500">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-mulberry/20 border border-mulberry/30 flex items-center justify-center text-kobi mb-6 animate-pulse">
+                        <i class="fa-solid fa-paper-plane text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Let's Connect!</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        I'm open to learning programs, mentorship, internships, and networking in Finance & Commerce.
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <a href="mailto:vidhyasri1024@gmail.com" class="w-full py-3 bg-darkBg hover:bg-darkBg/80 rounded-xl border border-gray-800 hover:border-kobi text-center text-sm font-medium text-white transition-all flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-envelope text-kobi"></i> Email Me
+                    </a>
+                    <a href="resume.html" target="_blank" class="w-full py-3 bg-azure hover:bg-azure/90 rounded-xl text-center text-sm font-bold text-white transition-all flex items-center justify-center gap-2 shadow-lg shadow-azure/20">
+                        <i class="fa-solid fa-file-pdf"></i> Access Resume
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ProtoSem Section -->
+    <section id="protosem" class="py-24 px-6 max-w-6xl mx-auto relative z-10">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <span class="inline-block px-3 py-1 bg-azure/10 border border-azure/30 text-azure text-xs font-bold uppercase tracking-wider rounded-full mb-4">Protosem</span>
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-2">PRICE ProtoSem</h2>
+            <p class="text-xl text-kobi font-medium mb-6">Innovation Engineer Trainee</p>
+            <p class="text-gray-400 text-sm tracking-wider uppercase mb-8">20-Week Industry-Integrated Innovation Programme</p>
+            
+            <div class="max-w-3xl mx-auto text-gray-300 space-y-4 text-base leading-relaxed mb-8">
+                <p>
+                    Selected for a 20-week industry-integrated innovation programme focused on solving real-world retail and commerce challenges through AI, analytics, intelligent systems, IoT, prototyping, and entrepreneurship.
+                </p>
+                <p>
+                    Working with industry problem statements to explore, develop, and validate practical technology solutions beyond conventional classroom learning.
+                </p>
+            </div>
+
+            <!-- Focus Areas / Program Disciplines (Not skill badges) -->
+            <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto mb-16">
+                <span class="px-5 py-2.5 bg-darkCard/80 border border-mulberry/30 text-gray-200 text-sm font-semibold rounded-2xl shadow-md hover:border-kobi hover:text-kobi transition-colors duration-300">
+                    <i class="fa-solid fa-store mr-2 text-mulberry"></i> Phygital Retail & Intelligent Commerce
+                </span>
+                <span class="px-5 py-2.5 bg-darkCard/80 border border-azure/30 text-gray-200 text-sm font-semibold rounded-2xl shadow-md hover:border-azure hover:text-azure transition-colors duration-300">
+                    <i class="fa-solid fa-brain mr-2 text-azure"></i> AI & Analytics
+                </span>
+                <span class="px-5 py-2.5 bg-darkCard/80 border border-kobi/30 text-gray-200 text-sm font-semibold rounded-2xl shadow-md hover:border-mulberry hover:text-mulberry transition-colors duration-300">
+                    <i class="fa-solid fa-microchip mr-2 text-kobi"></i> Intelligent Systems & IoT
+                </span>
+                <span class="px-5 py-2.5 bg-darkCard/80 border border-azure/30 text-gray-200 text-sm font-semibold rounded-2xl shadow-md hover:border-azure hover:text-azure transition-colors duration-300">
+                    <i class="fa-solid fa-cubes mr-2 text-azure"></i> Prototyping
+                </span>
+                <span class="px-5 py-2.5 bg-darkCard/80 border border-mulberry/30 text-gray-200 text-sm font-semibold rounded-2xl shadow-md hover:border-kobi hover:text-kobi transition-colors duration-300">
+                    <i class="fa-solid fa-lightbulb mr-2 text-mulberry"></i> Entrepreneurship
+                </span>
+            </div>
+
+            <!-- Subtle Program Progress Timeline Indicator -->
+            <div class="flex items-center justify-center gap-4 md:gap-8 mb-12 max-w-xl mx-auto bg-darkCard/50 p-4 rounded-2xl border border-gray-800/80">
+                <span class="text-xs font-bold text-gray-500">PROGRAMME PROGRESS</span>
+                <div class="flex items-center gap-1.5 md:gap-2 flex-grow justify-center font-mono text-[10px] md:text-xs">
+                    <span class="text-kobi font-bold">01</span>
+                    <span class="h-[2px] bg-gradient-to-r from-kobi to-azure w-6 md:w-12"></span>
+                    <span class="text-gray-400 font-bold">05</span>
+                    <span class="h-[2px] bg-gradient-to-r from-azure to-mulberry w-6 md:w-12"></span>
+                    <span class="text-gray-400 font-bold">10</span>
+                    <span class="h-[2px] bg-gradient-to-r from-mulberry to-kobi w-6 md:w-12"></span>
+                    <span class="text-gray-400 font-bold">15</span>
+                    <span class="h-[2px] bg-gradient-to-r from-kobi to-azure w-6 md:w-12"></span>
+                    <span class="text-gray-500 font-bold">20</span>
+                </div>
+            </div>
+            
+            <!-- Phase Navigation Filters -->
+            <div class="flex flex-wrap justify-center gap-2 mb-12">
+                <button onclick="filterPhase('all')" id="btn-all" class="phase-tab-btn px-6 py-2 rounded-full text-sm font-semibold border bg-azure text-white border-azure transition-all duration-300">
+                    All
+                </button>
+                <button onclick="filterPhase(1)" id="btn-1" class="phase-tab-btn px-6 py-2 rounded-full text-sm font-semibold border bg-transparent text-gray-400 border-gray-800 hover:border-gray-600 hover:text-white transition-all duration-300">
+                    Phase 01 (Weeks 1-5)
+                </button>
+                <button onclick="filterPhase(2)" id="btn-2" class="phase-tab-btn px-6 py-2 rounded-full text-sm font-semibold border bg-transparent text-gray-400 border-gray-800 hover:border-gray-600 hover:text-white transition-all duration-300">
+                    Phase 02 (Weeks 6-10)
+                </button>
+                <button onclick="filterPhase(3)" id="btn-3" class="phase-tab-btn px-6 py-2 rounded-full text-sm font-semibold border bg-transparent text-gray-400 border-gray-800 hover:border-gray-600 hover:text-white transition-all duration-300">
+                    Phase 03 (Weeks 11-15)
+                </button>
+                <button onclick="filterPhase(4)" id="btn-4" class="phase-tab-btn px-6 py-2 rounded-full text-sm font-semibold border bg-transparent text-gray-400 border-gray-800 hover:border-gray-600 hover:text-white transition-all duration-300">
+                    Phase 04 (Weeks 16-20)
+                </button>
+            </div>
+        </div>
+
+        <!-- Desktop & Tablet Timeline Grid / Winding Path (Data-Driven) -->
+        <div class="hidden md:block">
+            <div id="desktop-timeline" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Dynamically populated via JavaScript -->
+            </div>
+        </div>
+
+        <!-- Mobile Tree-node Layout -->
+        <div class="block md:hidden">
+            <div id="mobile-timeline" class="space-y-8 pl-4 border-l border-azure/20">
+                <!-- Dynamically populated via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Coming Soon Modal -->
+    <div id="coming-soon-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-darkCard border border-kobi/30 rounded-3xl p-8 max-w-md w-full mx-4 shadow-2xl relative transform scale-95 transition-transform duration-300">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="text-center">
+                <div class="w-16 h-16 rounded-full bg-azure/10 border border-azure/30 flex items-center justify-center text-azure mx-auto mb-6">
+                    <i class="fa-solid fa-circle-info text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2" id="modal-title">Week XX</h3>
+                <p class="text-azure text-sm font-semibold uppercase tracking-wider mb-4">Field Notes In Progress</p>
+                <p class="text-gray-400 leading-relaxed text-sm mb-6">
+                    We are currently compiling the learning materials, activities, and design diaries for this week. The detailed blog story will be published here soon!
+                </p>
+                <button onclick="closeModal()" class="px-6 py-2.5 rounded-full bg-gradient-to-r from-mulberry to-azure text-white font-semibold text-sm hover:opacity-90 transition-all">
+                    Got it, thanks!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-900 bg-darkBg/40 py-8 text-center text-sm text-gray-500 relative z-10">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 Vidhyasri A. All rights reserved.</p>
+            <p class="flex items-center gap-1.5">
+                Designed & Built with <i class="fa-solid fa-heart text-mulberry animate-pulse"></i> and Tailwind
+            </p>
+        </div>
+    </footer>
+
+    <!-- Libraries: Typed.js, Vanilla Tilt, AOS -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+        // Init AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true
+        });
+
+        // Init Typed.js
+        const typed = new Typed('#typed-text', {
+            strings: [
+                'B.Com Student',
+                'Finance Enthusiast',
+                'Creative Painter',
+                'Detail-Oriented Thinker'
+            ],
+            typeSpeed: 60,
+            backSpeed: 40,
+            backDelay: 2000,
+            loop: true
+        });
+
+        // 20-Week ProtoSem Data
+        const protoSemWeeks = Array.from({ length: 20 }, (_, i) => {
+            const weekNum = i + 1;
+            const phaseNum = Math.ceil(weekNum / 5);
+            return {
+                week: weekNum,
+                phase: phaseNum,
+                slug: `week-${String(weekNum).padStart(2, '0')}`,
+                status: "Coming Soon"
+            };
+        });
+
+        // Dynamic render function for ProtoSem
+        function initProtoSem() {
+            const desktopTimeline = document.getElementById('desktop-timeline');
+            const mobileTimeline = document.getElementById('mobile-timeline');
+            
+            if (!desktopTimeline || !mobileTimeline) return;
+            
+            // 1. Render Desktop Cards
+            desktopTimeline.innerHTML = protoSemWeeks.map(item => {
+                const weekStr = String(item.week).padStart(2, '0');
+                return `
+                    <a href="#/protosem/${item.slug}" onclick="handleWeekClick(${item.week}, event)" 
+                       class="desktop-week-card bento-card relative rounded-2xl p-6 border border-gray-800 hover:border-azure transition-all duration-300 flex flex-col justify-between group overflow-hidden block"
+                       data-phase="${item.phase}">
+                        <div class="absolute inset-0 bg-gradient-to-br from-azure/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-xs font-semibold tracking-wider text-gray-500 uppercase">Phase 0${item.phase}</span>
+                            <span class="w-2 h-2 rounded-full bg-azure/50 group-hover:bg-azure group-hover:scale-125 transition-all"></span>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-all duration-300 mb-1">
+                                Week ${weekStr}
+                            </h4>
+                            <span class="text-[10px] font-bold text-kobi tracking-wider uppercase">Field Notes In Progress</span>
+                            <div class="mt-4 text-[10px] text-azure font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <i class="fa-solid fa-circle-info mr-1"></i> Future story / blog post
+                            </div>
+                        </div>
+                    </a>
+                `;
+            }).join('');
+            
+            // 2. Render Mobile Tree Groups
+            const phases = [1, 2, 3, 4];
+            mobileTimeline.innerHTML = phases.map(phaseNum => {
+                const phaseWeeks = protoSemWeeks.filter(w => w.phase === phaseNum);
+                return `
+                    <div class="mobile-phase-group" data-phase="${phaseNum}">
+                        <h4 class="text-base font-extrabold text-white mb-4 flex items-center gap-2">
+                            <span class="w-2.5 h-2.5 rounded-full bg-azure"></span> Phase 0${phaseNum}
+                        </h4>
+                        <div class="space-y-4 pl-4 border-l border-azure/20">
+                            ${phaseWeeks.map((item, idx) => {
+                                const weekStr = String(item.week).padStart(2, '0');
+                                const isLast = idx === phaseWeeks.length - 1;
+                                return `
+                                    <a href="#/protosem/${item.slug}" onclick="handleWeekClick(${item.week}, event)" 
+                                       class="block p-4 bento-card rounded-xl border border-gray-800 flex justify-between items-center group relative">
+                                        <!-- Custom tree connector for visual path -->
+                                        <div class="absolute left-[-17px] top-[26px] w-[16px] h-[1px] bg-azure/20"></div>
+                                        ${isLast ? `<div class="absolute left-[-17px] top-[26px] w-[1px] h-[calc(100%-10px)] bg-[#090D16]"></div>` : ''}
+                                        
+                                        <div>
+                                            <span class="text-sm font-bold text-gray-300 group-hover:text-white">Week ${weekStr}</span>
+                                            <span class="text-[9px] block text-kobi tracking-wider uppercase font-semibold">Coming Soon</span>
+                                        </div>
+                                        <span class="text-[10px] text-gray-500 group-hover:text-azure font-mono flex items-center gap-1">
+                                            Future Story <i class="fa-solid fa-chevron-right text-[8px]"></i>
+                                        </span>
+                                    </a>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Phase navigation filter
+        function filterPhase(phase) {
+            // Update button styles
+            document.querySelectorAll('.phase-tab-btn').forEach(btn => {
+                btn.classList.remove('bg-azure', 'text-white', 'border-azure');
+                btn.classList.add('bg-transparent', 'text-gray-400', 'border-gray-800', 'hover:border-gray-600', 'hover:text-white');
+            });
+            
+            const activeBtn = document.getElementById(`btn-${phase}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-transparent', 'text-gray-400', 'border-gray-800', 'hover:border-gray-600', 'hover:text-white');
+                activeBtn.classList.add('bg-azure', 'text-white', 'border-azure');
+            }
+
+            // Filter Desktop Cards
+            document.querySelectorAll('.desktop-week-card').forEach(card => {
+                const cardPhase = card.getAttribute('data-phase');
+                if (phase === 'all' || cardPhase == phase) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Filter Mobile Groups
+            document.querySelectorAll('.mobile-phase-group').forEach(group => {
+                const groupPhase = group.getAttribute('data-phase');
+                if (phase === 'all' || groupPhase == phase) {
+                    group.style.display = 'block';
+                } else {
+                    group.style.display = 'none';
+                }
+            });
+        }
+
+        // Modal triggers
+        function handleWeekClick(weekNum, event) {
+            event.preventDefault();
+            const modal = document.getElementById('coming-soon-modal');
+            const modalContent = modal.querySelector('.transform');
+            const modalTitle = document.getElementById('modal-title');
+            
+            modalTitle.textContent = `Week ${String(weekNum).padStart(2, '0')}`;
+            
+            modal.classList.remove('pointer-events-none', 'opacity-0');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+            
+            window.location.hash = `protosem-week-${String(weekNum).padStart(2, '0')}`;
+        }
+
+        // Close modal
+        function closeModal() {
+            const modal = document.getElementById('coming-soon-modal');
+            const modalContent = modal.querySelector('.transform');
+            
+            modal.classList.add('pointer-events-none', 'opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            window.location.hash = 'protosem';
+        }
+
+        // Run on DOM load
+        document.addEventListener('DOMContentLoaded', () => {
+            initProtoSem();
+        });
+    </script>
+</body>
+</html>
