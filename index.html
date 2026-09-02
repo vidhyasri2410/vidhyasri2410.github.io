@@ -39,15 +39,66 @@
             color: #F3F4F6;
             overflow-x: hidden;
         }
-        .glow-bg {
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            filter: blur(140px);
-            opacity: 0.15;
+        /* ---------- layer 1: soft brand-gradient glow blobs ---------- */
+        .glow {
+            position: fixed; inset: -15%;
             z-index: 0;
-            pointer-events: none;
+            filter: blur(90px);
+        }
+        .b {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.44;
+            animation: drift 16s ease-in-out infinite;
+        }
+        .b1 {
+            width: 54vw; height: 54vw; left: -12vw; top: -14vh;
+            background: radial-gradient(circle, #E79FC4, transparent 70%);
+        }
+        .b2 {
+            width: 58vw; height: 58vw; right: -16vw; top: 2vh;
+            background: radial-gradient(circle, #007FFF, transparent 70%);
+            animation-delay: -5s;
+        }
+        .b3 {
+            width: 48vw; height: 48vw; left: 24vw; bottom: -24vh;
+            background: radial-gradient(circle, #A20067, transparent 70%);
+            animation-delay: -10s;
+        }
+        @keyframes drift {
+            0%,100% { transform: translate(0,0) scale(1); }
+            50%     { transform: translate(3vw,-2.5vh) scale(1.14); }
+        }
+
+        /* ---------- layer 2: faint dot grid for structure ---------- */
+        .dots {
+            position: fixed; inset: 0; z-index: 1;
+            background-image: radial-gradient(rgba(233,233,242,0.06) 1px, transparent 1px);
+            background-size: 36px 36px;
+            mask-image: radial-gradient(circle at 30% 30%, black 0%, transparent 70%);
+            -webkit-mask-image: radial-gradient(circle at 30% 30%, black 0%, transparent 70%);
+        }
+
+        /* ---------- layer 3: slow rising brand-colored particles ---------- */
+        .spark {
+            position: absolute;
+            bottom: -4%;
+            border-radius: 50%;
+            opacity: 0;
+            animation-name: floatUp;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+        @keyframes floatUp {
+            0%   { transform: translate(0,0); opacity: 0; }
+            12%  { opacity: 0.55; }
+            88%  { opacity: 0.55; }
+            100% { transform: translate(var(--dx,10px), -108vh); opacity: 0; }
+        }
+
+        .vignette {
+            position: fixed; inset: 0; z-index: 2; pointer-events: none;
+            background: radial-gradient(ellipse at 50% 30%, transparent 45%, rgba(9,13,22,0.55) 100%);
         }
         .bento-card {
             background: rgba(17, 24, 39, 0.7);
@@ -84,10 +135,15 @@
     </style>
 </head>
 <body class="font-sans antialiased">
-    <!-- Background Glow Blobs -->
-    <div class="glow-bg bg-azure top-[-100px] left-[-100px]"></div>
-    <div class="glow-bg bg-mulberry bottom-[10%] right-[-100px]"></div>
-    <div class="glow-bg bg-kobi top-[40%] left-[30%]"></div>
+    <!-- Animated Background Layers -->
+    <div class="glow">
+        <div class="b b1"></div>
+        <div class="b b2"></div>
+        <div class="b b3"></div>
+    </div>
+    <div class="dots"></div>
+    <div id="sparks"></div>
+    <div class="vignette"></div>
 
     <!-- Navigation Header -->
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
@@ -103,7 +159,7 @@
     </nav>
 
     <!-- Main Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-12 px-6">
+    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-12 px-6 z-10">
         <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <!-- Left Info Content -->
@@ -116,7 +172,7 @@
                     <span id="typed-text"></span>
                 </h2>
                 <p class="text-gray-400 text-lg leading-relaxed max-w-xl mb-8">
-                    An enthusiastic Commerce student at Kumaraguru College of Liberal Arts and Science, combining analytical logic with creative expression. Driven by a deep interest in finance and styled by a passion for visual arts.
+                    An enthusiastic Commerce student and passionate <strong>business enthusiast</strong> at Kumaraguru College of Liberal Arts and Science, combining analytical logic with creative expression. Driven by a deep interest in business strategy, financial management, and enterprise operations.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                     <a href="#portfolio" class="px-8 py-3.5 rounded-full text-white font-semibold custom-gradient-btn shadow-lg shadow-mulberry/20 flex items-center gap-2">
@@ -134,10 +190,18 @@
                     <!-- Failsafe Avatar -->
                     <div class="relative mb-6">
                         <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-mulberry via-kobi to-azure blur-md opacity-70 animate-pulse"></div>
-                        <img src="https://ui-avatars.com/api/?name=Vidhyasri+A&background=random&size=256" alt="Vidhyasri A" class="relative w-36 h-36 rounded-full border-4 border-darkBg object-cover shadow-2xl">
+                        <img src="profile.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Vidhyasri+A&background=random&size=256'" alt="Vidhyasri A" class="relative w-36 h-36 rounded-full border-4 border-darkBg object-cover shadow-2xl">
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-1">Vidhyasri A</h3>
-                    <p class="text-sm text-azure font-medium mb-4">B.Com Undergraduate</p>
+                    <p class="text-sm text-gray-300 font-medium mb-3">B.Com Undergraduate</p>
+                    <div class="flex flex-wrap justify-center gap-1.5 mb-4">
+                        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-azure bg-azure/10 border border-azure/30 px-2.5 py-0.5 rounded-full shadow-sm">
+                            <i class="fa-solid fa-ranking-star text-kobi"></i> 2nd Rank in Department
+                        </span>
+                        <span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-0.5 rounded-full shadow-sm">
+                            <i class="fa-solid fa-certificate text-emerald-400"></i> CMA Foundation Passed
+                        </span>
+                    </div>
                     <div class="flex items-center justify-center gap-2 text-xs text-gray-400 mb-6 bg-darkBg/50 px-3 py-1.5 rounded-full border border-gray-800">
                         <i class="fa-solid fa-location-dot text-kobi"></i> Coimbatore, India
                     </div>
@@ -162,7 +226,7 @@
     <section id="portfolio" class="py-24 px-6 max-w-6xl mx-auto relative z-10">
         <div class="text-center mb-16" data-aos="fade-up">
             <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-3">Interactive Showcase</h2>
-            <p class="text-gray-400 max-w-lg mx-auto">Explore the Bento Grid detailing my studies, skills, passions, and creative output.</p>
+            <p class="text-gray-400 max-w-lg mx-auto">Explore the Bento Grid detailing my studies, professional credentials, skills, passions, and creative output.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -175,10 +239,31 @@
                     </div>
                     <h3 class="text-2xl font-bold text-white mb-3">About My Journey</h3>
                     <p class="text-gray-300 leading-relaxed">
-                        I am currently pursuing a Bachelor of Commerce (B.Com) at <strong>Kumaraguru College of Liberal Arts and Science</strong>. My academic foundation focuses on financial management, commercial laws, and economic concepts. Beyond spreadsheets and reports, I bring a unique creative perspective powered by visual drawing and painting, allowing me to view complex problem-solving from both analytical and artistic angles.
+                        I am a passionate <strong>business enthusiast</strong> currently pursuing a Bachelor of Commerce (B.Com) at <strong>Kumaraguru College of Liberal Arts and Science</strong>, holding the <strong>2nd Rank in Department</strong> and having qualified the <strong>CMA Foundation Examination (ICMAI)</strong>. Deeply intrigued by how enterprises innovate, scale, and solve real-world challenges, my academic and professional foundation focuses on business strategy, cost & management accounting, financial principles, commercial laws, and economic concepts. Beyond spreadsheets and reports, I bring a unique creative perspective powered by visual drawing and painting, allowing me to view complex business problem-solving from both analytical and artistic angles.
                     </p>
+                    
+                    <div class="grid grid-cols-3 gap-4 mt-6">
+                        <div class="bg-darkBg/60 p-4 rounded-xl border border-kobi/20 text-center hover:border-kobi/50 transition-colors duration-300">
+                            <span class="block text-2xl font-bold text-kobi mb-1">8.3</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider font-semibold">B.Com CGPA</span>
+                        </div>
+                        <div class="bg-darkBg/60 p-4 rounded-xl border border-azure/20 text-center hover:border-azure/50 transition-colors duration-300">
+                            <span class="block text-2xl font-bold text-azure mb-1">97%</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider font-semibold">12th Grade</span>
+                        </div>
+                        <div class="bg-darkBg/60 p-4 rounded-xl border border-emerald-500/20 text-center hover:border-emerald-500/50 transition-colors duration-300">
+                            <span class="block text-2xl font-bold text-emerald-400 mb-1">91%</span>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider font-semibold">10th Grade</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="mt-8 flex items-center gap-4 text-xs font-semibold uppercase tracking-wider text-azure">
+                <div class="mt-8 flex items-center gap-3 text-xs font-semibold uppercase tracking-wider text-azure flex-wrap">
+                    <span class="flex items-center gap-1.5 text-kobi font-bold"><i class="fa-solid fa-briefcase"></i> Business Enthusiast</span>
+                    <span class="text-gray-600">•</span>
+                    <span class="flex items-center gap-1.5 text-emerald-400"><i class="fa-solid fa-certificate"></i> CMA Foundation Passed</span>
+                    <span class="text-gray-600">•</span>
+                    <span class="flex items-center gap-1.5 text-azure"><i class="fa-solid fa-ranking-star"></i> 2nd Dept Rank Holder</span>
+                    <span class="text-gray-600">•</span>
                     <span>Active Learning</span>
                     <span class="w-1.5 h-1.5 rounded-full bg-azure animate-ping"></span>
                 </div>
@@ -210,42 +295,65 @@
                     <div class="w-12 h-12 rounded-2xl bg-azure/10 border border-azure/20 flex items-center justify-center text-azure mb-6">
                         <i class="fa-solid fa-trophy text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-3">Honors & Certs</h3>
-                    <ul class="space-y-4 mb-4">
+                    <h3 class="text-2xl font-bold text-white mb-3">Honors &amp; Credentials</h3>
+                    <ul class="space-y-2.5 mb-4 max-h-80 overflow-y-auto pr-1">
+                        <li class="flex items-start gap-2.5 bg-darkBg/60 p-2 rounded-xl border border-emerald-500/30 shadow-sm">
+                            <i class="fa-solid fa-certificate text-emerald-400 mt-1 text-sm"></i>
+                            <div>
+                                <span class="text-sm font-bold text-white block">CMA Foundation</span>
+                                <span class="text-xs text-emerald-400 font-medium">Passed (ICMAI Qualified)</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5 bg-darkBg/60 p-2 rounded-xl border border-azure/30 shadow-sm">
+                            <i class="fa-solid fa-ranking-star text-azure mt-1 text-sm animate-pulse"></i>
+                            <div>
+                                <span class="text-sm font-bold text-white block">2nd Rank in Department</span>
+                                <span class="text-xs text-azure font-medium">Academic Merit &amp; Standing</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5 bg-darkBg/60 p-2 rounded-xl border border-indigo-500/30">
+                            <i class="fa-solid fa-graduation-cap text-indigo-400 mt-1 text-sm"></i>
+                            <div>
+                                <span class="text-sm font-bold text-white block">Soft Skill Development</span>
+                                <span class="text-xs text-indigo-400 font-medium">NPTEL Certified</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5 bg-darkBg/60 p-2 rounded-xl border border-kobi/30">
+                            <i class="fa-solid fa-calculator text-kobi mt-1 text-sm"></i>
+                            <div>
+                                <span class="text-sm font-semibold text-white block">Accounting Talent Search 25-26</span>
+                                <span class="text-xs text-kobi font-medium">Junior Level Completed</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-2.5 bg-darkBg/60 p-2 rounded-xl border border-azure/30">
+                            <i class="fa-solid fa-chart-line text-azure mt-1 text-sm"></i>
+                            <div>
+                                <span class="text-sm font-semibold text-white block">Financial Literacy Quiz 2026</span>
+                                <span class="text-xs text-azure font-medium">NISM (National Institute of Securities Markets)</span>
+                            </div>
+                        </li>
                         <li class="flex items-start gap-2.5">
-                            <i class="fa-solid fa-medal text-kobi mt-1 animate-pulse"></i>
+                            <i class="fa-solid fa-medal text-kobi mt-1"></i>
                             <div>
                                 <span class="text-sm font-semibold text-white block">Mahatma Gandhi Scholarship</span>
-                                <span class="text-xs text-gray-400">Academic Honors & Award</span>
+                                <span class="text-xs text-gray-400">Academic Honors &amp; Award</span>
                             </div>
                         </li>
                         <li class="flex items-start gap-2.5">
                             <i class="fa-solid fa-award text-azure mt-1"></i>
                             <div>
-                                <span class="text-sm font-semibold text-white block">Effective Leadership</span>
-                                <span class="text-xs text-gray-400">HP LIFE</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <i class="fa-solid fa-award text-kobi mt-1"></i>
-                            <div>
-                                <span class="text-sm font-semibold text-white block">Digital Business Skills</span>
-                                <span class="text-xs text-gray-400">HP LIFE</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-2.5">
-                            <i class="fa-solid fa-award text-azure mt-1"></i>
-                            <div>
-                                <span class="text-sm font-semibold text-white block">Contract Management</span>
-                                <span class="text-xs text-gray-400">TCS iON</span>
+                                <span class="text-sm font-semibold text-white block">Leadership &amp; Digital Skills</span>
+                                <span class="text-xs text-gray-400">HP LIFE &amp; TCS iON</span>
                             </div>
                         </li>
                     </ul>
                 </div>
-                <div class="border-t border-gray-800/60 pt-4 flex flex-wrap gap-2">
-                    <span class="px-2 py-0.5 bg-darkBg rounded-md text-[10px] border border-gray-800 text-azure font-medium">Honors</span>
-                    <span class="px-2 py-0.5 bg-darkBg rounded-md text-[10px] border border-gray-800 text-kobi font-medium">HP LIFE</span>
-                    <span class="px-2 py-0.5 bg-darkBg rounded-md text-[10px] border border-gray-800 text-white font-medium">TCS</span>
+                <div class="border-t border-gray-800/60 pt-4 flex flex-wrap gap-1.5">
+                    <span class="px-2 py-0.5 bg-darkBg rounded-md text-[10px] border border-emerald-500/40 text-emerald-400 font-bold">CMA</span>
+                    <span class="px-2 py-0.5 bg-darkBg rounded-md text-[10px] border border-indigo-500/40 text-indigo-400 font-medium">NPTEL</span>
+                    <span class="px-2 py-0.5 bg-darkBg rounded-md text-[10px] border border-azure/40 text-azure font-medium">NISM</span>
+                    <span class="px-2 py-0.5 bg-darkBg rounded-md text-[10px] border border-kobi/40 text-kobi font-medium">NATS</span>
+                    <span class="px-2 py-0.5 bg-darkBg rounded-md text-[10px] border border-gray-800 text-gray-300 font-medium">Dept Rank 2</span>
                 </div>
             </div>
 
@@ -294,17 +402,21 @@
                         <div>
                             <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Functional / Domain</h4>
                             <div class="space-y-3">
+                                <div class="flex items-center gap-2.5 text-gray-300 bg-darkBg/60 p-2.5 rounded-xl border border-emerald-500/30">
+                                    <i class="fa-solid fa-coins text-emerald-400 w-5 text-center"></i>
+                                    <span class="text-sm font-medium">Cost & Management Accounting (CMA)</span>
+                                </div>
                                 <div class="flex items-center gap-2.5 text-gray-300 bg-darkBg/60 p-2.5 rounded-xl border border-gray-800">
                                     <i class="fa-solid fa-calculator text-kobi w-5 text-center"></i>
                                     <span class="text-sm font-medium">Financial Accounting</span>
                                 </div>
                                 <div class="flex items-center gap-2.5 text-gray-300 bg-darkBg/60 p-2.5 rounded-xl border border-gray-800">
-                                    <i class="fa-regular fa-file-excel text-azure w-5 text-center"></i>
-                                    <span class="text-sm font-medium">Spreadsheet Management (MS Excel)</span>
+                                    <i class="fa-solid fa-scale-balanced text-azure w-5 text-center"></i>
+                                    <span class="text-sm font-medium">Commerce</span>
                                 </div>
                                 <div class="flex items-center gap-2.5 text-gray-300 bg-darkBg/60 p-2.5 rounded-xl border border-gray-800">
-                                    <i class="fa-solid fa-shapes text-kobi w-5 text-center"></i>
-                                    <span class="text-sm font-medium">Visual Presentation & Slide Design</span>
+                                    <i class="fa-solid fa-sitemap text-kobi w-5 text-center"></i>
+                                    <span class="text-sm font-medium">Management</span>
                                 </div>
                             </div>
                         </div>
@@ -373,36 +485,41 @@
             </div>
 
             <!-- Subtle Program Progress Timeline Indicator -->
-            <div class="flex items-center justify-center gap-4 md:gap-8 mb-12 max-w-xl mx-auto bg-darkCard/50 p-4 rounded-2xl border border-gray-800/80">
+            <div class="flex items-center justify-center gap-3 md:gap-6 mb-12 max-w-2xl mx-auto bg-darkCard/50 p-4 rounded-2xl border border-gray-800/80">
                 <span class="text-xs font-bold text-gray-500">PROGRAMME PROGRESS</span>
                 <div class="flex items-center gap-1.5 md:gap-2 flex-grow justify-center font-mono text-[10px] md:text-xs">
+                    <span class="px-2 py-0.5 rounded bg-azure/20 text-azure font-bold border border-azure/40" title="Foundation (Week 0)">00</span>
+                    <span class="h-[2px] bg-gradient-to-r from-azure to-kobi w-4 md:w-8"></span>
                     <span class="text-kobi font-bold">01</span>
-                    <span class="h-[2px] bg-gradient-to-r from-kobi to-azure w-6 md:w-12"></span>
+                    <span class="h-[2px] bg-gradient-to-r from-kobi to-azure w-4 md:w-8"></span>
                     <span class="text-gray-400 font-bold">05</span>
-                    <span class="h-[2px] bg-gradient-to-r from-azure to-mulberry w-6 md:w-12"></span>
+                    <span class="h-[2px] bg-gradient-to-r from-azure to-mulberry w-4 md:w-8"></span>
                     <span class="text-gray-400 font-bold">10</span>
-                    <span class="h-[2px] bg-gradient-to-r from-mulberry to-kobi w-6 md:w-12"></span>
+                    <span class="h-[2px] bg-gradient-to-r from-mulberry to-kobi w-4 md:w-8"></span>
                     <span class="text-gray-400 font-bold">15</span>
-                    <span class="h-[2px] bg-gradient-to-r from-kobi to-azure w-6 md:w-12"></span>
+                    <span class="h-[2px] bg-gradient-to-r from-kobi to-azure w-4 md:w-8"></span>
                     <span class="text-gray-500 font-bold">20</span>
                 </div>
             </div>
             
             <!-- Phase Navigation Filters -->
             <div class="flex flex-wrap justify-center gap-2 mb-12">
-                <button onclick="filterPhase('all')" id="btn-all" class="phase-tab-btn px-6 py-2 rounded-full text-sm font-semibold border bg-azure text-white border-azure transition-all duration-300">
+                <button onclick="filterPhase('all')" id="btn-all" class="phase-tab-btn px-5 py-2 rounded-full text-sm font-semibold border bg-azure text-white border-azure transition-all duration-300">
                     All
                 </button>
-                <button onclick="filterPhase(1)" id="btn-1" class="phase-tab-btn px-6 py-2 rounded-full text-sm font-semibold border bg-transparent text-gray-400 border-gray-800 hover:border-gray-600 hover:text-white transition-all duration-300">
+                <button onclick="filterPhase(0)" id="btn-0" class="phase-tab-btn px-5 py-2 rounded-full text-sm font-semibold border bg-transparent text-gray-400 border-gray-800 hover:border-gray-600 hover:text-white transition-all duration-300 flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-azure animate-pulse"></span> Foundation (Week 0)
+                </button>
+                <button onclick="filterPhase(1)" id="btn-1" class="phase-tab-btn px-5 py-2 rounded-full text-sm font-semibold border bg-transparent text-gray-400 border-gray-800 hover:border-gray-600 hover:text-white transition-all duration-300">
                     Phase 01 (Weeks 1-5)
                 </button>
-                <button onclick="filterPhase(2)" id="btn-2" class="phase-tab-btn px-6 py-2 rounded-full text-sm font-semibold border bg-transparent text-gray-400 border-gray-800 hover:border-gray-600 hover:text-white transition-all duration-300">
+                <button onclick="filterPhase(2)" id="btn-2" class="phase-tab-btn px-5 py-2 rounded-full text-sm font-semibold border bg-transparent text-gray-400 border-gray-800 hover:border-gray-600 hover:text-white transition-all duration-300">
                     Phase 02 (Weeks 6-10)
                 </button>
-                <button onclick="filterPhase(3)" id="btn-3" class="phase-tab-btn px-6 py-2 rounded-full text-sm font-semibold border bg-transparent text-gray-400 border-gray-800 hover:border-gray-600 hover:text-white transition-all duration-300">
+                <button onclick="filterPhase(3)" id="btn-3" class="phase-tab-btn px-5 py-2 rounded-full text-sm font-semibold border bg-transparent text-gray-400 border-gray-800 hover:border-gray-600 hover:text-white transition-all duration-300">
                     Phase 03 (Weeks 11-15)
                 </button>
-                <button onclick="filterPhase(4)" id="btn-4" class="phase-tab-btn px-6 py-2 rounded-full text-sm font-semibold border bg-transparent text-gray-400 border-gray-800 hover:border-gray-600 hover:text-white transition-all duration-300">
+                <button onclick="filterPhase(4)" id="btn-4" class="phase-tab-btn px-5 py-2 rounded-full text-sm font-semibold border bg-transparent text-gray-400 border-gray-800 hover:border-gray-600 hover:text-white transition-all duration-300">
                     Phase 04 (Weeks 16-20)
                 </button>
             </div>
@@ -423,24 +540,17 @@
         </div>
     </section>
 
-    <!-- Custom Coming Soon Modal -->
-    <div id="coming-soon-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="bg-darkCard border border-kobi/30 rounded-3xl p-8 max-w-md w-full mx-4 shadow-2xl relative transform scale-95 transition-transform duration-300">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
-                <i class="fa-solid fa-xmark text-xl"></i>
+    <!-- Interactive Story & Field Notes Modal (Supports Week 0 & Upcoming Weeks) -->
+    <div id="coming-soon-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 p-4 md:p-6" onclick="if(event.target===this)closeModal()">
+        <div id="modal-content-wrapper" class="bg-darkCard border border-kobi/30 rounded-3xl p-6 md:p-8 max-w-3xl w-full mx-auto shadow-2xl relative transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto">
+            <!-- Close Button -->
+            <button onclick="closeModal()" aria-label="Close modal" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-darkBg/80 border border-gray-700 text-gray-400 hover:text-white hover:border-azure flex items-center justify-center transition-colors z-20">
+                <i class="fa-solid fa-xmark text-lg"></i>
             </button>
-            <div class="text-center">
-                <div class="w-16 h-16 rounded-full bg-azure/10 border border-azure/30 flex items-center justify-center text-azure mx-auto mb-6">
-                    <i class="fa-solid fa-circle-info text-2xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-2" id="modal-title">Week XX</h3>
-                <p class="text-azure text-sm font-semibold uppercase tracking-wider mb-4">Field Notes In Progress</p>
-                <p class="text-gray-400 leading-relaxed text-sm mb-6">
-                    We are currently compiling the learning materials, activities, and design diaries for this week. The detailed blog story will be published here soon!
-                </p>
-                <button onclick="closeModal()" class="px-6 py-2.5 rounded-full bg-gradient-to-r from-mulberry to-azure text-white font-semibold text-sm hover:opacity-90 transition-all">
-                    Got it, thanks!
-                </button>
+            
+            <!-- Dynamic Container for Modal Content -->
+            <div id="modal-dynamic-body">
+                <!-- Populated dynamically by handleWeekClick() -->
             </div>
         </div>
     </div>
@@ -471,28 +581,207 @@
         // Init Typed.js
         const typed = new Typed('#typed-text', {
             strings: [
-                'B.Com Student',
-                'Finance Enthusiast',
-                'Creative Painter',
-                'Detail-Oriented Thinker'
+                'Business Enthusiast',
+                'B.Com Student (Department Rank 2)',
+                'CMA Foundation Passed',
+                'Cost & Management Accounting Aspirant',
+                'Creative Painter & Visual Designer'
             ],
-            typeSpeed: 60,
-            backSpeed: 40,
+            typeSpeed: 55,
+            backSpeed: 35,
             backDelay: 2000,
             loop: true
         });
 
-        // 20-Week ProtoSem Data
-        const protoSemWeeks = Array.from({ length: 20 }, (_, i) => {
-            const weekNum = i + 1;
-            const phaseNum = Math.ceil(weekNum / 5);
-            return {
-                week: weekNum,
-                phase: phaseNum,
-                slug: `week-${String(weekNum).padStart(2, '0')}`,
-                status: "Coming Soon"
-            };
-        });
+        // ProtoSem Complete Weeks Data (Week 0 Foundation + Weeks 1-20)
+        const protoSemWeeks = [
+            {
+                week: 0,
+                title: "Week 00",
+                subtitle: "Orientation & Foundation Week",
+                phase: 0,
+                phaseLabel: "Foundation",
+                slug: "week-00",
+                status: "Completed",
+                badgeText: "Field Notes Available",
+                quote: "Week Zero was much more than an introduction — it introduced us to ourselves, our teammates, real-world problems and a different way of learning.",
+                overview: "Orientation and immersive foundation kickoff for the 20-week PRICE ProtoSem innovation programme. Explored personal strengths, collaborative team dynamics, customer problem identification, and retail industry perspectives.",
+                days: [
+                    {
+                        day: "Day 1",
+                        title: "Ice-Breaking & Problem Discovery",
+                        icon: "fa-solid fa-handshake",
+                        iconColor: "text-mulberry",
+                        description: "Participated in an energetic Rock-Paper-Scissors ice-breaker activity. Engaged in structured group discussions identifying real-life friction points faced by customers and retailers, establishing that impactful innovation begins by discovering solvable problems."
+                    },
+                    {
+                        day: "Day 2",
+                        title: "Self-Discovery & Personality Exploration",
+                        icon: "fa-solid fa-brain",
+                        iconColor: "text-azure",
+                        description: "Completed the 16 Personalities (MBTI) assessment uncovering my 'Commander' (ENTJ-A) profile. Analyzed the Zen Pencils web comic on Leonardo Da Vinci ('Step away from the Canvas') and presented reflective insights to peers on acknowledging mistakes and creative mastery."
+                    },
+                    {
+                        day: "Day 3",
+                        title: "Team Formation & High-Pressure Challenges",
+                        icon: "fa-solid fa-users",
+                        iconColor: "text-kobi",
+                        description: "Formed the 'Beta Team' after a LinkedIn profile optimization session. Participated in the Imposter Bidding challenge and the iconic Marshmallow Challenge — learning the crucial importance of rapid prototyping, strategic alignment, and teamwork under time constraints."
+                    },
+                    {
+                        day: "Day 4",
+                        title: "Leadership Board & Retail Industry Insight",
+                        icon: "fa-solid fa-building-columns",
+                        iconColor: "text-azure",
+                        description: "Attended a peer Tech Talk and joined the formal inauguration featuring a keynote address by Mr. Kumar Rajagopalan, CEO of Retailers Association of India (RAI), on 'Gen Z Consumer Experience to Retail Innovation: Reimagining the Shopping Experience'."
+                    },
+                    {
+                        day: "Day 5",
+                        title: "Young Entrepreneurship & Experience Reflection",
+                        icon: "fa-solid fa-lightbulb",
+                        iconColor: "text-mulberry",
+                        description: "Celebrated World Entrepreneurship Day at the Young Entrepreneurship Program (YEP). Collaborated with teammates to present a comprehensive synthesis of our Week Zero experience, highlighting lessons in problem scoping, team agility, and observational rigor."
+                    }
+                ],
+                gallery: [
+                    {
+                        url: "images/week0-beta-team.jpg",
+                        caption: "Beta Team — ProtoSem Cohort at Kumaraguru College of Liberal Arts and Science"
+                    },
+                    {
+                        url: "images/week0-rai-inauguration.jpg",
+                        caption: "Special Address by Mr. Kumar Rajagopalan (CEO, Retailers Association of India) at Kumaraguru Auditorium"
+                    },
+                    {
+                        url: "images/week0-zen-pencils-presentation.jpg",
+                        caption: "Presenting Leonardo Da Vinci Comic Analysis & Creative Reflections to Peers"
+                    },
+                    {
+                        url: "images/week0-team-presentation.jpg",
+                        caption: "Beta Team Presentation: Becoming a Team & Problem Framing Session"
+                    },
+                    {
+                        url: "images/week0-mbti-entj.jpg",
+                        caption: "16 Personalities MBTI Assessment Result — Commander (ENTJ-A)"
+                    },
+                    {
+                        url: "images/week0-zen-pencils-comic.jpg",
+                        caption: "Zen Pencils Comic: 'Leo Da Vinci: Step away from the Canvas' Analyzed in Workshop"
+                    }
+                ],
+                keyTakeaways: [
+                    "Problem Identification: Entrepreneurship begins by noticing and scoping everyday pain points.",
+                    "Team Dynamics: Leveraging distinct MBTI profiles drives more cohesive teamwork.",
+                    "Rapid Prototyping: The Marshmallow Challenge underscored iterative planning and fast testing.",
+                    "Industry Context: Direct insights from RAI leadership on phygital retail trends."
+                ]
+            },
+            {
+                week: 1,
+                title: "Week 01",
+                subtitle: "Learning, Technology & Inspiration",
+                phase: 1,
+                phaseLabel: "Phase 01",
+                slug: "week-01",
+                status: "Completed",
+                badgeText: "Field Notes Available",
+                quote: "This week was filled with learning, exploration, technology, and inspiration.",
+                overview: "A dynamic week starting with the Instagram algorithm and Design Thinking, followed by data visualization with Power BI. The week concluded with guest lectures and our Week 1 PPT presentation.",
+                days: [
+                    {
+                        day: "Day 1",
+                        title: "Algorithm & Design Thinking",
+                        icon: "fa-brands fa-instagram",
+                        iconColor: "text-kobi",
+                        description: "We explored how the Instagram algorithm works, followed by a Design Thinking session by Ms. Meera Ma’am. Later, our team chose the Food & Beverage industry as our retail sector. 🍽️"
+                    },
+                    {
+                        day: "Day 2",
+                        title: "Power BI & Industry Analysis",
+                        icon: "fa-solid fa-chart-simple",
+                        iconColor: "text-azure",
+                        description: "A tech talk on Power BI showed us how raw data can be transformed into meaningful dashboards and visualisations. We also presented the Value Chain and SWOT Analysis of the Food & Beverage industry. 📊"
+                    },
+                    {
+                        day: "Day 4",
+                        title: "Prospect Theory & Anti-Gravity IDE",
+                        icon: "fa-solid fa-code",
+                        iconColor: "text-emerald-400",
+                        description: "We learned about Prospect Theory and explored portfolio creation using Anti-Gravity IDE."
+                    },
+                    {
+                        day: "Day 5",
+                        title: "App Creation, Vision & Guest Welcome",
+                        icon: "fa-solid fa-microphone",
+                        iconColor: "text-mulberry",
+                        description: "We had a session on Base44 and app creation, followed by an inspiring class on Goals, Vision & Glory. I also had the opportunity to deliver the welcoming address for our guests, which was a wonderful experience for me. The stories of great leaders and the importance of taking the first step reminded us that every big achievement starts somewhere."
+                    }
+                ],
+                gallery: [
+                    {
+                        url: "images/media_1788094334066.jpg",
+                        caption: "Design Thinking Session with Ms. Meera Ma'am"
+                    },
+                    {
+                        url: "images/media_1788094368212.jpg",
+                        caption: "Evolution of Food & Beverage Retail Sector Infographic"
+                    },
+                    {
+                        url: "images/media_1788094438411.jpg",
+                        caption: "Collaborative Team Work & Exploring IDE"
+                    },
+                    {
+                        url: "images/media_1788094595892.jpg",
+                        caption: "Memory Master App Experience"
+                    },
+                    {
+                        url: "images/media_1788094709120.jpg",
+                        caption: "Conclusion of the Whole Week Team PPT"
+                    },
+                    {
+                        url: "images/media_1788094749933.jpg",
+                        caption: "Welcoming Address & Panel Interaction"
+                    },
+                    {
+                        url: "images/media_1788094794547.jpg",
+                        caption: "Presenting Future Retail Trends"
+                    },
+                    {
+                        url: "images/media_1788094810978.jpg",
+                        caption: "Food & Beverage Value Chain Breakdown"
+                    },
+                    {
+                        url: "images/media_1788094926826.jpg",
+                        caption: "Guest Talk: Story of the Panel Members"
+                    },
+                    {
+                        url: "images/media_1788094976732.jpg",
+                        caption: "Reverse Plan - Real Preparation Timeline"
+                    }
+                ],
+                keyTakeaways: [
+                    "Data Visualisation: Power BI transforms raw data into actionable dashboards.",
+                    "Strategic Thinking: Value Chain and SWOT analysis are critical for sector understanding.",
+                    "Leadership & Vision: Delivering the welcoming address and learning from great leaders."
+                ]
+            },
+            ...Array.from({ length: 19 }, (_, i) => {
+                const weekNum = i + 2;
+                const phaseNum = Math.ceil(weekNum / 5);
+                return {
+                    week: weekNum,
+                    title: `Week ${String(weekNum).padStart(2, '0')}`,
+                    subtitle: `Phase 0${phaseNum} Milestone`,
+                    phase: phaseNum,
+                    phaseLabel: `Phase 0${phaseNum}`,
+                    slug: `week-${String(weekNum).padStart(2, '0')}`,
+                    status: "Coming Soon",
+                    badgeText: "Field Notes In Progress",
+                    overview: "Field notes, technical milestones, and project diaries for this week will be documented as the programme progresses.",
+                    days: []
+                };
+            })
+        ];
 
         // Dynamic render function for ProtoSem
         function initProtoSem() {
@@ -503,55 +792,90 @@
             
             // 1. Render Desktop Cards
             desktopTimeline.innerHTML = protoSemWeeks.map(item => {
-                const weekStr = String(item.week).padStart(2, '0');
+                const isCompleted = item.status === "Completed";
+                const borderClass = isCompleted 
+                    ? "border-azure/60 shadow-lg shadow-azure/10 ring-1 ring-azure/30" 
+                    : "border-gray-800 hover:border-azure";
+                const badgeBg = isCompleted 
+                    ? "bg-azure/20 text-azure border border-azure/40" 
+                    : "text-kobi";
+
                 return `
                     <a href="#/protosem/${item.slug}" onclick="handleWeekClick(${item.week}, event)" 
-                       class="desktop-week-card bento-card relative rounded-2xl p-6 border border-gray-800 hover:border-azure transition-all duration-300 flex flex-col justify-between group overflow-hidden block"
+                       class="desktop-week-card bento-card relative rounded-2xl p-6 ${borderClass} transition-all duration-300 flex flex-col justify-between group overflow-hidden block"
                        data-phase="${item.phase}">
-                        <div class="absolute inset-0 bg-gradient-to-br from-azure/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                        <div class="absolute inset-0 bg-gradient-to-br ${isCompleted ? 'from-azure/15 via-kobi/5 to-transparent' : 'from-azure/5 to-transparent'} opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                        
                         <div class="flex justify-between items-start mb-4">
-                            <span class="text-xs font-semibold tracking-wider text-gray-500 uppercase">Phase 0${item.phase}</span>
-                            <span class="w-2 h-2 rounded-full bg-azure/50 group-hover:bg-azure group-hover:scale-125 transition-all"></span>
+                            <span class="text-xs font-bold tracking-wider ${isCompleted ? 'text-azure uppercase' : 'text-gray-500 uppercase'}">${item.phaseLabel}</span>
+                            <span class="w-2.5 h-2.5 rounded-full ${isCompleted ? 'bg-azure shadow-[0_0_8px_#007FFF]' : 'bg-azure/40 group-hover:bg-azure'} transition-all"></span>
                         </div>
+                        
                         <div>
-                            <h4 class="text-lg font-bold text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-all duration-300 mb-1">
-                                Week ${weekStr}
-                            </h4>
-                            <span class="text-[10px] font-bold text-kobi tracking-wider uppercase">Field Notes In Progress</span>
-                            <div class="mt-4 text-[10px] text-azure font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <i class="fa-solid fa-circle-info mr-1"></i> Future story / blog post
+                            <div class="flex items-center gap-2 mb-1">
+                                <h4 class="text-lg font-bold ${isCompleted ? 'text-white' : 'text-gray-400 group-hover:text-white'} group-hover:translate-x-1 transition-all duration-300">
+                                    ${item.title}
+                                </h4>
+                                ${isCompleted ? '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Active</span>' : ''}
+                            </div>
+                            
+                            <p class="text-xs text-gray-300 mb-2 font-medium">${item.subtitle || ''}</p>
+                            
+                            <span class="text-[10px] font-bold ${badgeBg} tracking-wider uppercase inline-block px-2 py-0.5 rounded">
+                                ${item.badgeText}
+                            </span>
+                            
+                            <div class="mt-4 text-[11px] font-medium ${isCompleted ? 'text-azure' : 'text-azure opacity-0 group-hover:opacity-100'} transition-opacity duration-300 flex items-center gap-1.5">
+                                <i class="fa-solid ${isCompleted ? 'fa-book-open' : 'fa-circle-info'}"></i> 
+                                ${isCompleted ? 'Read Full Field Notes &rarr;' : 'Future story / blog post'}
                             </div>
                         </div>
                     </a>
                 `;
             }).join('');
             
-            // 2. Render Mobile Tree Groups
-            const phases = [1, 2, 3, 4];
-            mobileTimeline.innerHTML = phases.map(phaseNum => {
-                const phaseWeeks = protoSemWeeks.filter(w => w.phase === phaseNum);
+            // 2. Render Mobile Tree Groups (Phases 0, 1, 2, 3, 4)
+            const phases = [
+                { num: 0, label: "Foundation (Week 0)" },
+                { num: 1, label: "Phase 01 (Weeks 1-5)" },
+                { num: 2, label: "Phase 02 (Weeks 6-10)" },
+                { num: 3, label: "Phase 03 (Weeks 11-15)" },
+                { num: 4, label: "Phase 04 (Weeks 16-20)" }
+            ];
+            
+            mobileTimeline.innerHTML = phases.map(phaseObj => {
+                const phaseWeeks = protoSemWeeks.filter(w => w.phase === phaseObj.num);
+                if (phaseWeeks.length === 0) return '';
+                
                 return `
-                    <div class="mobile-phase-group" data-phase="${phaseNum}">
+                    <div class="mobile-phase-group" data-phase="${phaseObj.num}">
                         <h4 class="text-base font-extrabold text-white mb-4 flex items-center gap-2">
-                            <span class="w-2.5 h-2.5 rounded-full bg-azure"></span> Phase 0${phaseNum}
+                            <span class="w-2.5 h-2.5 rounded-full ${phaseObj.num === 0 ? 'bg-azure shadow-[0_0_8px_#007FFF]' : 'bg-azure'}"></span> 
+                            ${phaseObj.label}
                         </h4>
                         <div class="space-y-4 pl-4 border-l border-azure/20">
                             ${phaseWeeks.map((item, idx) => {
-                                const weekStr = String(item.week).padStart(2, '0');
                                 const isLast = idx === phaseWeeks.length - 1;
+                                const isCompleted = item.status === "Completed";
                                 return `
                                     <a href="#/protosem/${item.slug}" onclick="handleWeekClick(${item.week}, event)" 
-                                       class="block p-4 bento-card rounded-xl border border-gray-800 flex justify-between items-center group relative">
+                                       class="block p-4 bento-card rounded-xl ${isCompleted ? 'border-azure/50 bg-darkCard/90' : 'border-gray-800'} flex justify-between items-center group relative">
                                         <!-- Custom tree connector for visual path -->
                                         <div class="absolute left-[-17px] top-[26px] w-[16px] h-[1px] bg-azure/20"></div>
                                         ${isLast ? `<div class="absolute left-[-17px] top-[26px] w-[1px] h-[calc(100%-10px)] bg-[#090D16]"></div>` : ''}
                                         
                                         <div>
-                                            <span class="text-sm font-bold text-gray-300 group-hover:text-white">Week ${weekStr}</span>
-                                            <span class="text-[9px] block text-kobi tracking-wider uppercase font-semibold">Coming Soon</span>
+                                            <div class="flex items-center gap-2">
+                                                <span class="text-sm font-bold ${isCompleted ? 'text-white' : 'text-gray-300 group-hover:text-white'}">${item.title}</span>
+                                                ${isCompleted ? '<span class="text-[9px] px-1.5 py-0.5 rounded bg-azure/20 text-azure border border-azure/30 font-bold">Read</span>' : ''}
+                                            </div>
+                                            <span class="text-[10px] block text-gray-400">${item.subtitle || ''}</span>
+                                            <span class="text-[9px] block ${isCompleted ? 'text-azure font-bold' : 'text-kobi font-semibold'} tracking-wider uppercase mt-0.5">
+                                                ${item.badgeText}
+                                            </span>
                                         </div>
-                                        <span class="text-[10px] text-gray-500 group-hover:text-azure font-mono flex items-center gap-1">
-                                            Future Story <i class="fa-solid fa-chevron-right text-[8px]"></i>
+                                        <span class="text-[10px] ${isCompleted ? 'text-azure font-bold' : 'text-gray-500 group-hover:text-azure'} font-mono flex items-center gap-1">
+                                            ${isCompleted ? 'View Notes' : 'Coming Soon'} <i class="fa-solid fa-chevron-right text-[8px]"></i>
                                         </span>
                                     </a>
                                 `;
@@ -597,38 +921,203 @@
             });
         }
 
-        // Modal triggers
+        // Modal triggers & dynamic content population
         function handleWeekClick(weekNum, event) {
-            event.preventDefault();
+            if (event) event.preventDefault();
             const modal = document.getElementById('coming-soon-modal');
-            const modalContent = modal.querySelector('.transform');
-            const modalTitle = document.getElementById('modal-title');
+            const modalContent = document.getElementById('modal-content-wrapper');
+            const dynamicBody = document.getElementById('modal-dynamic-body');
             
-            modalTitle.textContent = `Week ${String(weekNum).padStart(2, '0')}`;
+            const weekData = protoSemWeeks.find(w => w.week === weekNum) || {
+                week: weekNum,
+                title: `Week ${String(weekNum).padStart(2, '0')}`,
+                status: "Coming Soon"
+            };
+
+            if (weekData.status === "Completed") {
+                // Render Rich Week Experience
+                dynamicBody.innerHTML = `
+                    <div class="text-left">
+                        <!-- Header / Badges -->
+                        <div class="flex items-center gap-3 mb-2 flex-wrap">
+                            <span class="px-3 py-1 bg-azure/20 border border-azure/40 text-azure text-xs font-bold uppercase tracking-wider rounded-full flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-azure animate-ping"></span> ${weekData.phaseLabel || 'Milestone'}
+                            </span>
+                            <span class="px-3 py-1 bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider rounded-full flex items-center gap-1.5">
+                                <i class="fa-solid fa-check text-[10px]"></i> Completed &amp; Documented
+                            </span>
+                        </div>
+                        
+                        <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-1">
+                            ${weekData.title} — ${weekData.subtitle || 'Field Notes'}
+                        </h3>
+                        <p class="text-kobi text-sm font-semibold mb-5">
+                            PRICE ProtoSem 20-Week Innovation Programme • Trainee Field Journal
+                        </p>
+
+                        <!-- Key Quote Card -->
+                        <div class="bg-darkBg/80 border-l-4 border-azure p-4 rounded-r-2xl mb-6 relative overflow-hidden">
+                            <i class="fa-solid fa-quote-left text-3xl text-azure/20 absolute right-4 top-3"></i>
+                            <p class="text-gray-300 italic text-sm md:text-base leading-relaxed">
+                                "${weekData.quote}"
+                            </p>
+                        </div>
+
+                        <!-- 5 Days Breakdown Timeline -->
+                        <div class="mb-6">
+                            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-calendar-days text-azure"></i> Daily Learning Journey &amp; Milestones
+                            </h4>
+                            
+                            <div class="space-y-3.5">
+                                ${weekData.days.map(d => `
+                                    <div class="bg-darkBg/60 border border-gray-800/80 hover:border-azure/40 rounded-2xl p-4 transition-colors">
+                                        <div class="flex items-start gap-3.5">
+                                            <div class="w-9 h-9 rounded-xl bg-darkCard border border-gray-700 flex items-center justify-center shrink-0 ${d.iconColor} shadow-inner">
+                                                <i class="${d.icon} text-sm"></i>
+                                            </div>
+                                            <div class="flex-grow">
+                                                <div class="flex items-baseline gap-2 mb-1 flex-wrap">
+                                                    <span class="text-xs font-bold text-azure font-mono uppercase">${d.day}</span>
+                                                    <span class="text-xs text-gray-500">•</span>
+                                                    <span class="text-sm font-bold text-white">${d.title}</span>
+                                                </div>
+                                                <p class="text-xs md:text-sm text-gray-300 leading-relaxed">${d.description}</p>
+                                                ${d.image ? `
+                                                    <div class="mt-3 overflow-hidden rounded-xl border border-gray-700/60 max-h-60 bg-darkBg">
+                                                        <img src="${d.image}" alt="${d.title}" class="w-full h-auto object-cover hover:scale-102 transition-transform duration-300 rounded-lg">
+                                                    </div>
+                                                ` : ''}
+                                            </div>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        ${(weekData.gallery && weekData.gallery.length > 0) ? `
+                            <!-- Photo Gallery Grid -->
+                            <div class="mb-6">
+                                <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+                                    <i class="fa-solid fa-camera text-kobi"></i> ${weekData.title} Activity Snapshots &amp; Gallery
+                                </h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                                    ${weekData.gallery.map(item => `
+                                        <div class="bg-darkBg border border-gray-800/80 rounded-2xl overflow-hidden group hover:border-azure/40 transition-all flex flex-col justify-between">
+                                            <div class="overflow-hidden h-48 sm:h-56 bg-darkCard/80 flex items-center justify-center cursor-pointer relative" onclick="window.open('${item.url}', '_blank')" title="Click to view full photo">
+                                                <img src="${item.url}" alt="${item.caption || weekData.title + ' Activity'}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.closest('.bg-darkBg').style.display='none'">
+                                                <div class="absolute bottom-2 right-2 bg-darkBg/80 px-2 py-1 rounded-md text-[10px] text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                                                    <i class="fa-solid fa-expand text-[9px] text-azure"></i> Full View
+                                                </div>
+                                            </div>
+                                            ${item.caption ? `
+                                                <div class="p-3 text-xs text-gray-300 bg-darkBg/95 border-t border-gray-800/80">
+                                                    <p class="font-medium">${item.caption}</p>
+                                                </div>
+                                            ` : ''}
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+
+                        <!-- Key Takeaways & Highlights -->
+                        <div class="bg-darkBg/50 border border-kobi/20 rounded-2xl p-4 mb-6">
+                            <h4 class="text-xs font-bold text-kobi uppercase tracking-wider mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-compass text-kobi"></i> Core Foundation Takeaways
+                            </h4>
+                            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-gray-300">
+                                ${weekData.keyTakeaways.map(t => `
+                                    <li class="flex items-start gap-2">
+                                        <i class="fa-solid fa-circle-check text-azure text-[11px] mt-0.5"></i>
+                                        <span>${t}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+
+                        <!-- Footer Actions -->
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-3 pt-4 border-t border-gray-800">
+                            <a href="resume.html" target="_blank" class="text-xs text-azure hover:underline font-semibold flex items-center gap-1.5">
+                                <i class="fa-solid fa-file-pdf"></i> View on Full Resume Document
+                            </a>
+                            <button onclick="closeModal()" class="w-full sm:w-auto px-6 py-2.5 rounded-full bg-gradient-to-r from-mulberry to-azure text-white font-semibold text-xs hover:opacity-90 transition-all shadow-md">
+                                Close Field Notes
+                            </button>
+                        </div>
+                    </div>
+                `;
+            } else {
+                // Render Generic Placeholder for Upcoming Weeks
+                dynamicBody.innerHTML = `
+                    <div class="text-center py-4">
+                        <div class="w-16 h-16 rounded-full bg-azure/10 border border-azure/30 flex items-center justify-center text-azure mx-auto mb-6">
+                            <i class="fa-solid fa-circle-info text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">${weekData.title}</h3>
+                        <p class="text-azure text-sm font-semibold uppercase tracking-wider mb-4">${weekData.badgeText}</p>
+                        <p class="text-gray-400 leading-relaxed text-sm mb-6 max-w-md mx-auto">
+                            We are currently compiling the learning materials, activities, and design diaries for this milestone. The detailed field notes and blog story will be published here soon!
+                        </p>
+                        <button onclick="closeModal()" class="px-6 py-2.5 rounded-full bg-gradient-to-r from-mulberry to-azure text-white font-semibold text-sm hover:opacity-90 transition-all shadow-md">
+                            Got it, thanks!
+                        </button>
+                    </div>
+                `;
+            }
             
             modal.classList.remove('pointer-events-none', 'opacity-0');
             modalContent.classList.remove('scale-95');
             modalContent.classList.add('scale-100');
             
-            window.location.hash = `protosem-week-${String(weekNum).padStart(2, '0')}`;
+            window.location.hash = `protosem-${weekData.slug}`;
         }
 
         // Close modal
         function closeModal() {
             const modal = document.getElementById('coming-soon-modal');
-            const modalContent = modal.querySelector('.transform');
+            const modalContent = document.getElementById('modal-content-wrapper');
             
-            modal.classList.add('pointer-events-none', 'opacity-0');
-            modalContent.classList.remove('scale-100');
-            modalContent.classList.add('scale-95');
+            if (modal && modalContent) {
+                modal.classList.add('pointer-events-none', 'opacity-0');
+                modalContent.classList.remove('scale-100');
+                modalContent.classList.add('scale-95');
+            }
             
             window.location.hash = 'protosem';
         }
+
+        // Handle Escape key to close modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
 
         // Run on DOM load
         document.addEventListener('DOMContentLoaded', () => {
             initProtoSem();
         });
+    </script>
+
+    <!-- Animated Particles Script -->
+    <script>
+        const container = document.getElementById('sparks');
+        const colors = ['#E79FC4', '#A20067', '#007FFF'];
+        for(let i=0; i<22; i++){
+            const s = document.createElement('div');
+            s.className = 'spark';
+            const size = 2 + Math.random()*2.5;
+            s.style.width = size+'px';
+            s.style.height = size+'px';
+            const c = colors[Math.floor(Math.random()*colors.length)];
+            s.style.background = c;
+            s.style.boxShadow = '0 0 6px 1px ' + c;
+            s.style.left = Math.random()*100 + 'vw';
+            const dur = 13 + Math.random()*12;
+            s.style.animationDuration = dur + 's';
+            s.style.animationDelay = (-Math.random()*dur) + 's';
+            s.style.setProperty('--dx', (Math.random()*70-35)+'px');
+            container.appendChild(s);
+        }
     </script>
 </body>
 </html>
