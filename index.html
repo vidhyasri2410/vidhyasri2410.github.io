@@ -765,8 +765,63 @@
                     "Leadership & Vision: Delivering the welcoming address and learning from great leaders."
                 ]
             },
-            ...Array.from({ length: 19 }, (_, i) => {
-                const weekNum = i + 2;
+            {
+                week: 2,
+                title: "Week 02",
+                subtitle: "Technology, Creativity & Problem-Solving",
+                phase: 1,
+                phaseLabel: "Phase 01",
+                slug: "week-02",
+                status: "Completed",
+                badgeText: "Field Notes Available",
+                quote: "Week 2 of PRICE Protosem was all about exploring how technology, creativity, and problem-solving come together.",
+                overview: "Each day brought something new to learn—from branding and algorithms to UI design, data analytics, and app development. Looking forward to learning and building more in the coming days.",
+                days: [
+                    {
+                        day: "Day 1",
+                        title: "Emotional Branding & 5S Technique",
+                        icon: "fa-solid fa-heart",
+                        iconColor: "text-mulberry",
+                        description: "We began with a TED Talk on The Power of Emotional Branding, followed by a problem identification session. We also learned about the 5S Japanese technique in a session conducted by Brahma. As part of Team Red Cubicle, I was responsible for arranging and organizing the technical tools."
+                    },
+                    {
+                        day: "Day 2",
+                        title: "Chatbots & Algorithms",
+                        icon: "fa-solid fa-robot",
+                        iconColor: "text-azure",
+                        description: "The day started with a TED Talk on Chatbots, followed by an interesting session by Gowri on how algorithms work. Through activities such as arranging the steps involved in making a podi dosa, solving puzzles, and understanding coding-related concepts, we learned how algorithms work in a practical and fun way."
+                    },
+                    {
+                        day: "Day 3",
+                        title: "Designing UI & Creativity",
+                        icon: "fa-solid fa-pen-nib",
+                        iconColor: "text-kobi",
+                        description: "The tech talk focused on Designing UI. We also explored Scratch and were given a fun challenge to create a meme within two minutes. It was an enjoyable way to experience creativity and digital design."
+                    },
+                    {
+                        day: "Day 4",
+                        title: "Data Analytics & App Development",
+                        icon: "fa-solid fa-mobile-screen",
+                        iconColor: "text-emerald-400",
+                        description: "We had a tech talk on Data Analytics and were introduced to MIT App Inventor. We were asked to start discovering and developing an app based on our team's problem statement."
+                    }
+                ],
+                gallery: [
+                    { url: "images/media_1789037516406.png", caption: "Team Red Cubicle 5S Activity" },
+                    { url: "images/media_1789037533180.png", caption: "Learning Session & Tech Talks" },
+                    { url: "images/media_1789037586139.png", caption: "Algorithm Logic & Puzzles" },
+                    { url: "images/media_1789037599724.png", caption: "Designing UI Principles" },
+                    { url: "images/media_1789037648268.png", caption: "Scratch Meme Challenge" },
+                    { url: "images/media_1789037678068.png", caption: "MIT App Inventor Session" }
+                ],
+                keyTakeaways: [
+                    "Problem Solving: Combining analytical approaches with creativity.",
+                    "Algorithms: Practical learning through structured step-by-step logic.",
+                    "Prototyping: Hands-on experience with MIT App Inventor for app development."
+                ]
+            },
+            ...Array.from({ length: 18 }, (_, i) => {
+                const weekNum = i + 3;
                 const phaseNum = Math.ceil(weekNum / 5);
                 return {
                     week: weekNum,
