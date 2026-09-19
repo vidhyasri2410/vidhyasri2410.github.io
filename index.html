@@ -860,8 +860,56 @@
                     "PCB Prototyping: Building and assembling a real Printed Circuit Board from digital designs."
                 ]
             },
-            ...Array.from({ length: 17 }, (_, i) => {
-                const weekNum = i + 4;
+            {
+                week: 4,
+                title: "Week 04",
+                subtitle: "Exploring Hardware, Sensors & IoT",
+                phase: 1,
+                phaseLabel: "Phase 01",
+                slug: "week-04",
+                status: "Completed",
+                badgeText: "Field Notes Available",
+                quote: "It was exciting to see how simple components can come together to create a smart and functional system.",
+                overview: "Week 4 of PRICE Protosem was all about getting hands-on with computational hardware, sensors, communication protocols, and IoT. Each day helped me understand how the concepts we learn can be transformed into practical applications.",
+                days: [
+                    {
+                        day: "Day 1",
+                        title: "Learning & Exploration",
+                        icon: "fa-solid fa-book-open",
+                        iconColor: "text-mulberry",
+                        description: "We began the week by building our understanding of computational hardware and how different components work together to create functional systems."
+                    },
+                    {
+                        day: "Day 2",
+                        title: "Computational Hardware & Arduino Uno",
+                        icon: "fa-solid fa-microchip",
+                        iconColor: "text-azure",
+                        description: "We learned about the Arduino Uno, its board components, and the functions of different pins and parts. This gave me a better understanding of how microcontrollers interact with electronic components."
+                    },
+                    {
+                        day: "Day 3",
+                        title: "Chrome Extensions & Sensors",
+                        icon: "fa-solid fa-plug",
+                        iconColor: "text-kobi",
+                        description: "We explored Chrome Extensions and continued with computational hardware. We learned about sensors, actuators, UART, I²C, and SPI communication protocols. Explored the MPU6050 sensor and SG90 servo motor, understanding how sensors collect information and actuators respond."
+                    },
+                    {
+                        day: "Day 4",
+                        title: "IoT & Smart Room Model",
+                        icon: "fa-solid fa-wifi",
+                        iconColor: "text-emerald-400",
+                        description: "Introduced to IoT (Internet of Things) and connected devices. Worked on a Smart Room Model measuring object distance and room temperature, designed so the bulb turns ON when an object is within 20 cm."
+                    }
+                ],
+                gallery: [],
+                keyTakeaways: [
+                    "Hardware Systems: Understanding component interaction and microcontroller basics with Arduino Uno.",
+                    "Sensors & Actuators: Practical experience with MPU6050 sensor, SG90 servo motor, and communication protocols (UART, I²C, SPI).",
+                    "Internet of Things: Building smart systems like a proximity and temperature-aware Smart Room Model."
+                ]
+            },
+            ...Array.from({ length: 16 }, (_, i) => {
+                const weekNum = i + 5;
                 const phaseNum = Math.ceil(weekNum / 5);
                 return {
                     week: weekNum,
