@@ -820,8 +820,42 @@
                     "Prototyping: Hands-on experience with MIT App Inventor for app development."
                 ]
             },
-            ...Array.from({ length: 18 }, (_, i) => {
-                const weekNum = i + 3;
+            {
+                week: 3,
+                title: "Week 03",
+                subtitle: "Hardware, Circuits & Signals",
+                phase: 1,
+                phaseLabel: "Phase 01",
+                slug: "week-03",
+                status: "Completed",
+                badgeText: "Field Notes Available",
+                quote: "This experience showed us how an idea developed digitally can be transformed into a working physical electronic system.",
+                overview: "This week focused on computational hardware and transforming signals. We got hands-on with Thinker Card circuits and built a real PCB model to understand the practical side of electronic systems.",
+                days: [
+                    {
+                        day: "Day 4",
+                        title: "Computational Hardware",
+                        icon: "fa-solid fa-microchip",
+                        iconColor: "text-azure",
+                        description: "Introduced to computational hardware, learning about electronic components like power diodes. Worked with a Thinker Card, creating a basic electronic model to understand circuit functionality and how to light a bulb, gaining practical hardware insights."
+                    },
+                    {
+                        day: "Day 5",
+                        title: "From Sensors to Signals",
+                        icon: "fa-solid fa-wave-square",
+                        iconColor: "text-emerald-400",
+                        description: "Attended a Tech Talk on “From Sensors to Signals”, learning how sensors convert environmental changes into electronic signals. Built a real PCB (Printed Circuit Board) model by assembling and testing components physically, successfully bridging the gap between digital ideas and working physical systems. 🔧💡"
+                    }
+                ],
+                gallery: [],
+                keyTakeaways: [
+                    "Computational Hardware: Understanding components like power diodes and basic circuits.",
+                    "Sensors & Signals: Converting environmental changes into understandable signals.",
+                    "PCB Prototyping: Building and assembling a real Printed Circuit Board from digital designs."
+                ]
+            },
+            ...Array.from({ length: 17 }, (_, i) => {
+                const weekNum = i + 4;
                 const phaseNum = Math.ceil(weekNum / 5);
                 return {
                     week: weekNum,
