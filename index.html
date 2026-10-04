@@ -69,7 +69,6 @@
             0%,100% { transform: translate(0,0) scale(1); }
             50%     { transform: translate(3vw,-2.5vh) scale(1.14); }
         }
-
         /* ---------- layer 2: faint dot grid for structure ---------- */
         .dots {
             position: fixed; inset: 0; z-index: 1;
@@ -78,7 +77,6 @@
             mask-image: radial-gradient(circle at 30% 30%, black 0%, transparent 70%);
             -webkit-mask-image: radial-gradient(circle at 30% 30%, black 0%, transparent 70%);
         }
-
         /* ---------- layer 3: slow rising brand-colored particles ---------- */
         .spark {
             position: absolute;
@@ -95,7 +93,6 @@
             88%  { opacity: 0.55; }
             100% { transform: translate(var(--dx,10px), -108vh); opacity: 0; }
         }
-
         .vignette {
             position: fixed; inset: 0; z-index: 2; pointer-events: none;
             background: radial-gradient(ellipse at 50% 30%, transparent 45%, rgba(9,13,22,0.55) 100%);
@@ -144,7 +141,6 @@
     <div class="dots"></div>
     <div id="sparks"></div>
     <div class="vignette"></div>
-
     <!-- Navigation Header -->
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -157,7 +153,6 @@
             </div>
         </div>
     </nav>
-
     <!-- Main Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center pt-24 pb-12 px-6 z-10">
         <div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -183,7 +178,6 @@
                     </a>
                 </div>
             </div>
-
             <!-- Right 3D Tilt Card Section -->
             <div class="lg:col-span-5 flex justify-center z-10" data-aos="zoom-in" data-aos-delay="100">
                 <div class="w-full max-w-sm bento-card rounded-3xl p-8 relative flex flex-col items-center justify-center text-center overflow-hidden border border-kobi/20" data-tilt data-tilt-max="12" data-tilt-glare="true" data-tilt-max-glare="0.3">
@@ -218,17 +212,14 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
-
     <!-- Bento Grid Section -->
     <section id="portfolio" class="py-24 px-6 max-w-6xl mx-auto relative z-10">
         <div class="text-center mb-16" data-aos="fade-up">
             <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-3">Interactive Showcase</h2>
             <p class="text-gray-400 max-w-lg mx-auto">Explore the Bento Grid detailing my studies, professional credentials, skills, passions, and creative output.</p>
         </div>
-
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             <!-- Card 1: About Me (Double Width) -->
@@ -268,7 +259,6 @@
                     <span class="w-1.5 h-1.5 rounded-full bg-azure animate-ping"></span>
                 </div>
             </div>
-
             <!-- Card 2: Hobbies / Art (Single Width) -->
             <div class="bento-card rounded-3xl p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
                 <div>
@@ -288,7 +278,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Card 3: Honors & Certifications (Single Width) -->
             <div class="bento-card rounded-3xl p-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
                 <div>
@@ -356,7 +345,6 @@
                     <span class="px-2 py-0.5 bg-darkBg rounded-md text-[10px] border border-gray-800 text-gray-300 font-medium">Dept Rank 2</span>
                 </div>
             </div>
-
             <!-- Card 4: Skills Matrix (Double Width) -->
             <div id="skills" class="bento-card rounded-3xl p-8 md:col-span-2 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="400">
                 <div>
@@ -398,7 +386,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div>
                             <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Functional / Domain</h4>
                             <div class="space-y-3">
@@ -423,7 +410,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Card 5: Connect & Resume (Single Width) -->
             <div class="bento-card rounded-3xl p-8 flex flex-col justify-between bg-gradient-to-br from-darkCard to-mulberry/10" data-aos="fade-up" data-aos-delay="500">
                 <div>
@@ -444,10 +430,8 @@
                     </a>
                 </div>
             </div>
-
         </div>
     </section>
-
     <!-- ProtoSem Section -->
     <section id="protosem" class="py-24 px-6 max-w-6xl mx-auto relative z-10">
         <div class="text-center mb-12" data-aos="fade-up">
@@ -464,7 +448,6 @@
                     Working with industry problem statements to explore, develop, and validate practical technology solutions beyond conventional classroom learning.
                 </p>
             </div>
-
             <!-- Focus Areas / Program Disciplines (Not skill badges) -->
             <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto mb-16">
                 <span class="px-5 py-2.5 bg-darkCard/80 border border-mulberry/30 text-gray-200 text-sm font-semibold rounded-2xl shadow-md hover:border-kobi hover:text-kobi transition-colors duration-300">
@@ -483,7 +466,6 @@
                     <i class="fa-solid fa-lightbulb mr-2 text-mulberry"></i> Entrepreneurship
                 </span>
             </div>
-
             <!-- Subtle Program Progress Timeline Indicator -->
             <div class="flex items-center justify-center gap-3 md:gap-6 mb-12 max-w-2xl mx-auto bg-darkCard/50 p-4 rounded-2xl border border-gray-800/80">
                 <span class="text-xs font-bold text-gray-500">PROGRAMME PROGRESS</span>
@@ -524,14 +506,12 @@
                 </button>
             </div>
         </div>
-
         <!-- Desktop & Tablet Timeline Grid / Winding Path (Data-Driven) -->
         <div class="hidden md:block">
             <div id="desktop-timeline" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Dynamically populated via JavaScript -->
             </div>
         </div>
-
         <!-- Mobile Tree-node Layout -->
         <div class="block md:hidden">
             <div id="mobile-timeline" class="space-y-8 pl-4 border-l border-azure/20">
@@ -539,7 +519,6 @@
             </div>
         </div>
     </section>
-
     <!-- Interactive Story & Field Notes Modal (Supports Week 0 & Upcoming Weeks) -->
     <div id="coming-soon-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 p-4 md:p-6" onclick="if(event.target===this)closeModal()">
         <div id="modal-content-wrapper" class="bg-darkCard border border-kobi/30 rounded-3xl p-6 md:p-8 max-w-3xl w-full mx-auto shadow-2xl relative transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto">
@@ -554,7 +533,6 @@
             </div>
         </div>
     </div>
-
     <!-- Footer -->
     <footer class="border-t border-gray-900 bg-darkBg/40 py-8 text-center text-sm text-gray-500 relative z-10">
         <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
@@ -564,12 +542,10 @@
             </p>
         </div>
     </footer>
-
     <!-- Libraries: Typed.js, Vanilla Tilt, AOS -->
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
     <script>
         // Init AOS
         AOS.init({
@@ -577,7 +553,6 @@
             easing: 'ease-out-cubic',
             once: true
         });
-
         // Init Typed.js
         const typed = new Typed('#typed-text', {
             strings: [
@@ -592,7 +567,6 @@
             backDelay: 2000,
             loop: true
         });
-
         // ProtoSem Complete Weeks Data (Week 0 Foundation + Weeks 1-20)
         const protoSemWeeks = [
             {
@@ -973,15 +947,8 @@
                     "Prototyping & Design: Bridging insights to functional designs in Figma and Fusion 360."
                 ]
             },
-            
-                        title: "Workflow & Software Preparation",
-                        icon: "fa-solid fa-laptop-code",
-                        iconColor: "text-azure",
-                        description: "Used RDWorksV8 to convert vectors to .dxf, constrain dimensions, and apply color-layer process separation. Configured engrave (surface) and cut (perimeter) layers."
-                    },
-                    
-                ...Array.from({ length: 14 }, (_, i) => {
-                const weekNum = i + 7;
+            ...Array.from({ length: 15 }, (_, i) => {
+                const weekNum = i + 6;
                 const phaseNum = Math.ceil(weekNum / 5);
                 return {
                     week: weekNum,
@@ -997,7 +964,6 @@
                 };
             })
         ];
-
         // Dynamic render function for ProtoSem
         function initProtoSem() {
             const desktopTimeline = document.getElementById('desktop-timeline');
@@ -1014,7 +980,6 @@
                 const badgeBg = isCompleted 
                     ? "bg-azure/20 text-azure border border-azure/40" 
                     : "text-kobi";
-
                 return `
                     <a href="#/protosem/${item.slug}" onclick="handleWeekClick(${item.week}, event)" 
                        class="desktop-week-card bento-card relative rounded-2xl p-6 ${borderClass} transition-all duration-300 flex flex-col justify-between group overflow-hidden block"
@@ -1100,7 +1065,6 @@
                 `;
             }).join('');
         }
-
         // Phase navigation filter
         function filterPhase(phase) {
             // Update button styles
@@ -1114,7 +1078,6 @@
                 activeBtn.classList.remove('bg-transparent', 'text-gray-400', 'border-gray-800', 'hover:border-gray-600', 'hover:text-white');
                 activeBtn.classList.add('bg-azure', 'text-white', 'border-azure');
             }
-
             // Filter Desktop Cards
             document.querySelectorAll('.desktop-week-card').forEach(card => {
                 const cardPhase = card.getAttribute('data-phase');
@@ -1124,7 +1087,6 @@
                     card.style.display = 'none';
                 }
             });
-
             // Filter Mobile Groups
             document.querySelectorAll('.mobile-phase-group').forEach(group => {
                 const groupPhase = group.getAttribute('data-phase');
@@ -1135,7 +1097,6 @@
                 }
             });
         }
-
         // Modal triggers & dynamic content population
         function handleWeekClick(weekNum, event) {
             if (event) event.preventDefault();
@@ -1148,7 +1109,6 @@
                 title: `Week ${String(weekNum).padStart(2, '0')}`,
                 status: "Coming Soon"
             };
-
             if (weekData.status === "Completed") {
                 // Render Rich Week Experience
                 dynamicBody.innerHTML = `
@@ -1169,7 +1129,6 @@
                         <p class="text-kobi text-sm font-semibold mb-5">
                             PRICE ProtoSem 20-Week Innovation Programme • Trainee Field Journal
                         </p>
-
                         <!-- Key Quote Card -->
                         <div class="bg-darkBg/80 border-l-4 border-azure p-4 rounded-r-2xl mb-6 relative overflow-hidden">
                             <i class="fa-solid fa-quote-left text-3xl text-azure/20 absolute right-4 top-3"></i>
@@ -1177,7 +1136,6 @@
                                 "${weekData.quote}"
                             </p>
                         </div>
-
                         <!-- 5 Days Breakdown Timeline -->
                         <div class="mb-6">
                             <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4 flex items-center gap-2">
@@ -1209,7 +1167,6 @@
                                 `).join('')}
                             </div>
                         </div>
-
                         ${(weekData.gallery && weekData.gallery.length > 0) ? `
                             <!-- Photo Gallery Grid -->
                             <div class="mb-6">
@@ -1235,7 +1192,6 @@
                                 </div>
                             </div>
                         ` : ''}
-
                         <!-- Key Takeaways & Highlights -->
                         <div class="bg-darkBg/50 border border-kobi/20 rounded-2xl p-4 mb-6">
                             <h4 class="text-xs font-bold text-kobi uppercase tracking-wider mb-3 flex items-center gap-2">
@@ -1250,7 +1206,6 @@
                                 `).join('')}
                             </ul>
                         </div>
-
                         <!-- Footer Actions -->
                         <div class="flex flex-col sm:flex-row justify-between items-center gap-3 pt-4 border-t border-gray-800">
                             <a href="resume.html" target="_blank" class="text-xs text-azure hover:underline font-semibold flex items-center gap-1.5">
@@ -1287,7 +1242,6 @@
             
             window.location.hash = `protosem-${weekData.slug}`;
         }
-
         // Close modal
         function closeModal() {
             const modal = document.getElementById('coming-soon-modal');
@@ -1301,18 +1255,15 @@
             
             window.location.hash = 'protosem';
         }
-
         // Handle Escape key to close modal
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closeModal();
         });
-
         // Run on DOM load
         document.addEventListener('DOMContentLoaded', () => {
             initProtoSem();
         });
     </script>
-
     <!-- Animated Particles Script -->
     <script>
         const container = document.getElementById('sparks');
@@ -1336,4 +1287,3 @@
     </script>
 </body>
 </html>
-
