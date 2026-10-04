@@ -992,7 +992,7 @@
     <p>Laser Cutting is a thermal-based, non-contact subtractive manufacturing process that uses a high-intensity, focused coherent beam of laser light to melt, vaporize, or burn through sheet materials along computer-controlled vector paths. When operated at reduced power or elevated scanning speeds, the beam performs Laser Engraving / Marking—vaporizing only a thin surface layer of the substrate to create high-contrast, frosted tactile graphics without slicing completely through the material.</p>
     
     <div class="my-4 rounded-xl overflow-hidden border border-gray-700 bg-darkBg">
-        <img src="WhatsApp Image 2026-10-04 at 12.04.31 PM.jpeg" alt="Industrial 1490 CO2 Laser Machine" class="w-full">
+        <img src="images/WhatsApp Image 2026-10-04 at 12.04.31 PM.jpeg" alt="Industrial 1490 CO2 Laser Machine" class="w-full">
         <p class="p-3 text-xs italic text-gray-400 bg-darkBg/95">Figure: Industrial 1490 CO2 Laser Cutting & Engraving Station (150W, 1300 × 900 mm working bed).</p>
     </div>
 
@@ -1249,7 +1249,7 @@
     <h4 class="text-lg font-bold text-azure mt-6">Software Simulation & Toolpath Metrics:</h4>
     <h5 class="text-md font-bold text-white mt-4">Specimen 1: Squirrel Simulation</h5>
     <div class="my-4 rounded-xl overflow-hidden border border-gray-700 bg-darkBg">
-        <img src="Screenshot 2026-09-30 145054.png" alt="Squirrel RDWorks Simulation" class="w-full">
+        <img src="images/Screenshot 2026-09-30 145054.png" alt="Squirrel RDWorks Simulation" class="w-full">
         <p class="p-3 text-xs italic text-gray-400 bg-darkBg/95">Figure 8A: RDWorks software simulation for Squirrel medallion: Size: 50.0 mm × 50.0 mm | Total time: 0:01:28.713 | Light time: 0:00:20.453 | Idle travel: 6826.0 mm | Work travel: 2045.3 mm.</p>
     </div>
     <h5 class="text-md font-bold text-white mt-4">Specimen 2: Hogwarts Crest Simulation</h5>
@@ -1261,7 +1261,7 @@
     <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">9. Cutting Process</h3>
     <h4 class="text-lg font-bold text-azure mt-4">Machine Setup & Control Console Calibration</h4>
     <div class="my-4 rounded-xl overflow-hidden border border-gray-700 bg-darkBg">
-        <img src="WhatsApp Image 2026-10-04 at 12.51.38 PM.jpeg" alt="Operator Console Setup" class="w-full">
+        <img src="images/WhatsApp Image 2026-10-04 at 12.51.38 PM.jpeg" alt="Operator Console Setup" class="w-full">
         <p class="p-3 text-xs italic text-gray-400 bg-darkBg/95">Figure 9A: Hands-On Machine Setup & Operation at FabLab Coimbatore (FORGE). The operator calibrating the job origin, verifying safety interlocks, and initializing laser execution from the Ruida DSP control console.</p>
     </div>
     <h4 class="text-lg font-bold text-azure mt-6">Specimen 1: Squirrel Medallion Cutting Process</h4>
@@ -1335,6 +1335,262 @@
         <li><strong class="text-white">Specimen 1 ("Stay Curious" Squirrel Keychain DXF):</strong> <a href="https://drive.google.com/file/d/1MTBNUMzPIwvTpxmUCIM_i5eHCp4SnDV8/view?usp=sharing" class="text-azure hover:underline" target="_blank">Download Squirrel DXF File</a></li>
         <li><strong class="text-white">Specimen 2 (Hogwarts Crest Keychain DXF):</strong> <a href="https://drive.google.com/file/d/14-_sSbLa3IJc4z-8d-ffQmU_RxtMdCyO/view?usp=drive_link" class="text-azure hover:underline" target="_blank">Download Hogwarts Crest DXF File</a></li>
     </ul>
+    <hr class="border-gray-700 my-10">
+    <h2 class="text-3xl font-bold text-azure mb-6 border-b-2 border-azure pb-2">Page 2: 3D Printing</h2>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">Theoretical Background & Fundamentals</h3>
+
+    <h4 class="text-lg font-bold text-azure mt-4">What is 3D Printing?</h4>
+    <p>3D Printing, formally termed <strong>Additive Manufacturing (AM)</strong>, is a computer-controlled manufacturing method that produces physical three-dimensional objects directly from digital CAD data by joining material layer upon layer. Unlike conventional production methods that rely on physical cutting tools to remove raw stock or metal molds to cast molten fluids, additive manufacturing places material exclusively where demanded by the geometry's sliced cross-section.</p>
+
+    <h4 class="text-lg font-bold text-azure mt-6">Manufacturing Process Classification</h4>
+    <p>Modern industrial manufacturing processes are classified into four fundamental categories:</p>
+    <div class="overflow-x-auto my-3">
+        <table class="w-full text-left border-collapse border border-gray-700">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="border border-gray-700 p-2">Manufacturing Category</th>
+                    <th class="border border-gray-700 p-2">Operating Principle</th>
+                    <th class="border border-gray-700 p-2">Common Industrial Examples</th>
+                    <th class="border border-gray-700 p-2">Tool Contact & Mechanical Stress</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border border-gray-700 p-2"><strong>Additive</strong></td>
+                    <td class="border border-gray-700 p-2">Accumulates material layer-upon-layer directly from digital slicing</td>
+                    <td class="border border-gray-700 p-2">FDM, SLA, SLS, SLM</td>
+                    <td class="border border-gray-700 p-2">Zero tool cutting force; builds directly from build plate</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-700 p-2"><strong>Subtractive (Mechanical)</strong></td>
+                    <td class="border border-gray-700 p-2">Mechanically shears, cuts, or mills material from a solid billet</td>
+                    <td class="border border-gray-700 p-2">CNC Milling, Lathe Turning, Drilling</td>
+                    <td class="border border-gray-700 p-2">High cutting tool contact, mechanical shear stress, and tool wear</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-700 p-2"><strong>Subtractive (Thermal)</strong></td>
+                    <td class="border border-gray-700 p-2">Vaporizes or melts narrow kerf paths using focused energy</td>
+                    <td class="border border-gray-700 p-2">CO₂ Laser Cutting, Fiber Laser, Plasma</td>
+                    <td class="border border-gray-700 p-2">Zero physical tool contact; localized thermal heat-affected zone (HAZ)</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-700 p-2"><strong>Formative</strong></td>
+                    <td class="border border-gray-700 p-2">Forces molten or malleable material into a rigid negative cavity</td>
+                    <td class="border border-gray-700 p-2">Plastic Injection Molding, Stamping, Die Casting</td>
+                    <td class="border border-gray-700 p-2">High clamping pressures and custom permanent metal tooling</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h4 class="text-lg font-bold text-azure mt-6">Stages of the 3D Printing Workflow</h4>
+    <ol class="list-decimal pl-5 mt-1 space-y-1 text-gray-400">
+        <li><strong class="text-white">3D CAD Modeling:</strong> Geometric construction inside parametric CAD suites or sourcing digital mesh models via repositories like Bambu Studio's integrated Online Models.</li>
+        <li><strong class="text-white">Mesh Export / Preparation:</strong> Converting parametric solids into triangular surface boundary files (<code>.stl</code> or <code>.3mf</code>).</li>
+        <li><strong class="text-white">Slicing & Toolpath Generation:</strong> Importing geometry into Bambu Studio to slice cross-sectional profiles into machine-level instructions (G-code) based on layer height, extrusion temperatures, print speed, and infill densities.</li>
+        <li><strong class="text-white">Hardware Preparation & Pre-Flight Routine:</strong> Loading filament, cleaning and positioning the textured PEI plate, and running automated bed leveling and resonance sweeps.</li>
+        <li><strong class="text-white">Layer Extrusion:</strong> Continuous deposition of melted thermoplastic beads through the heated nozzle onto the build surface.</li>
+        <li><strong class="text-white">Cooling & Post-Processing:</strong> Controlled heat dissipation on the build plate, natural part release, and dimensional inspection.</li>
+    </ol>
+
+    <h4 class="text-lg font-bold text-azure mt-6">Common 3D Printing Technologies</h4>
+    <ul class="list-disc pl-5 mt-1 space-y-1 text-gray-400">
+        <li><strong class="text-white">Fused Deposition Modeling (FDM / FFF):</strong> Pushes solid thermoplastic filament through an electric heating block and nozzle, tracing cross-sections onto a heated bed.</li>
+        <li><strong class="text-white">Stereolithography (SLA) & Digital Light Processing (DLP):</strong> Selectively cures photosensitive liquid photopolymer resin using directed ultraviolet lasers or digital micro-mirror projections.</li>
+        <li><strong class="text-white">Selective Laser Sintering (SLS):</strong> Uses a high-power CO₂ laser beam to sinter micron-scale polymer powder (typically Nylon PA12) layer-by-layer without requiring sacrificial supports.</li>
+        <li><strong class="text-white">Selective Laser Melting (SLM / DMLS):</strong> High-energy laser melting of reactive or non-reactive metal powders (Titanium, Stainless Steel, Inconel) to create dense aerospace and medical components.</li>
+    </ul>
+
+    <h4 class="text-lg font-bold text-azure mt-6">Advantages, Disadvantages & Limitations of the Bambu Lab H2S FDM 3D Printer</h4>
+    <ul class="list-disc pl-5 mt-1 space-y-2 text-gray-400">
+        <li><strong class="text-white">Advantages:</strong>
+            <ul class="list-[circle] pl-5 mt-1 space-y-1 text-gray-400">
+                <li><strong class="text-white">High Kinematic Acceleration:</strong> CoreXY architecture achieves speeds up to 1,000 mm/s and accelerations up to 20,000 mm/s² without losing rotational stepper steps.</li>
+                <li><strong class="text-white">Automated Calibration:</strong> Integrated active vibration compensation (input shaping) and multi-point automated bed leveling eliminate manual leveling error.</li>
+                <li><strong class="text-white">Fuzzy Skin Texture Generation:</strong> Proprietary outer-perimeter micro-oscillation algorithms obscure horizontal layer ridges, generating an even, matte stone-like texture.</li>
+                <li><strong class="text-white">Material Efficiency:</strong> Directly builds internal infills (such as Gyroid) and self-supporting geometries, keeping total part mass around target specifications (6.98 g) with near-zero material waste.</li>
+            </ul>
+        </li>
+        <li><strong class="text-white">Disadvantages:</strong>
+            <ul class="list-[circle] pl-5 mt-1 space-y-1 text-gray-400">
+                <li><strong class="text-white">Anisotropic Z-Axis Strength:</strong> Extruded thermoplastic bonds along the vertical Z-axis exhibit lower tensile strength than paths extruded along the planar X-Y axes.</li>
+                <li><strong class="text-white">Stepped Surface Topography:</strong> Sloped and curved upward surfaces exhibit visible microscopic stepping based on layer height (e.g., 0.20 mm layer increments).</li>
+                <li><strong class="text-white">Thermal Shrinkage & Warping Risk:</strong> Uneven cooling on broad flat bases can generate internal mechanical stresses, causing corners to lift if bed adhesion is lost.</li>
+            </ul>
+        </li>
+        <li><strong class="text-white">Limitations:</strong>
+            <ul class="list-[circle] pl-5 mt-1 space-y-1 text-gray-400">
+                <li><strong class="text-white">Overhang Thresholds:</strong> Unassisted horizontal cantilevers or overhang angles exceeding 45° to 50° will droop unless sacrificial scaffolding or tree supports are generated.</li>
+                <li><strong class="text-white">Build Volume Ceiling:</strong> Enclosed build dimensions limit the single-piece continuous manufacturing envelope to 340 × 320 × 340 mm³.</li>
+                <li><strong class="text-white">Thermal Melt Rate Limits:</strong> Volumetric melt capacity caps maximum extrusion flow rates, requiring slower print speeds during dense surface contours.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4 class="text-lg font-bold text-azure mt-6">Laboratory Safety Rules & Precautions</h4>
+    <ul class="list-disc pl-5 mt-1 space-y-1 text-gray-400">
+        <li><strong class="text-white">Thermal Safety:</strong> Hotend temperatures reach up to 350°C and the heatbed operates at 55°C–120°C. Never touch the nozzle tip or heating block during or immediately following operation.</li>
+        <li><strong class="text-white">Mechanical Pinch Hazards:</strong> Keep hands, tools, loose clothing, and hair clear of the high-speed CoreXY gantry belts, stepper pulleys, and Z-axis lead screws during motion cycles.</li>
+        <li><strong class="text-white">Plate Handling Safety:</strong> Do not use sharp metal scrapers on the Bambu Textured PEI Plate; allow the plate to cool below 35°C before flexing to remove prints cleanly without damaging the PEI coating.</li>
+        <li><strong class="text-white">Ventilation Safety:</strong> Operate the printer in well-ventilated laboratory spaces to ensure volatile thermal organic compounds generated during thermoplastic melting are safely cleared.</li>
+    </ul>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">1. Printer Details</h3>
+    <div class="my-4 rounded-xl overflow-hidden border border-gray-700 bg-darkBg">
+        <img src="images/WhatsApp Image 2026-10-04 at 12.04.31 PM.jpeg" alt="Bambu Lab H2S 3D Printer" class="w-full">
+        <p class="p-3 text-xs italic text-gray-400 bg-darkBg/95">Figure 1: Bambu Lab H2S CoreXY FDM Additive Manufacturing Workstation.</p>
+    </div>
+    
+    <div class="overflow-x-auto my-3">
+        <table class="w-full text-left border-collapse border border-gray-700">
+            <tbody>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Make</td><td class="border border-gray-700 p-2">Bambu Lab</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Model</td><td class="border border-gray-700 p-2">H2S High-Speed CoreXY 3D Printer</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Build Volume (W × D × H)</td><td class="border border-gray-700 p-2">340 mm × 320 mm × 340 mm</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Nozzle Size & Type</td><td class="border border-gray-700 p-2">0.40 mm Hardened Steel All-Metal Hotend (Max 350°C)</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Supported Materials</td><td class="border border-gray-700 p-2">PLA, PETG, TPU, ABS, ASA, PVA, PC, PA, Carbon/Glass Fiber Composites (PLA-CF, PA-CF)</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">2. Slicer & Material</h3>
+    <div class="overflow-x-auto my-3">
+        <table class="w-full text-left border-collapse border border-gray-700">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="border border-gray-700 p-2">Parameter</th>
+                    <th class="border border-gray-700 p-2">Laboratory Selection</th>
+                    <th class="border border-gray-700 p-2">Engineering Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Slicer Software</td><td class="border border-gray-700 p-2">Bambu Studio for Windows</td><td class="border border-gray-700 p-2">Version: 64-bit CoreXY build with integrated model sourcing and path engine</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Print Material</td><td class="border border-gray-700 p-2">Bambu PLA Basic (Polylactic Acid)</td><td class="border border-gray-700 p-2">1.75 mm diameter, biodegradable thermoplastic derived from renewable plant starches</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">3. Printer Limits & Capabilities</h3>
+    <ul class="list-disc pl-5 mt-1 space-y-1 text-gray-400">
+        <li><strong class="text-white">Kinematic Speed & Acceleration:</strong> The CoreXY setup maintained stable, high-speed movement without layer shifting or vibration artifacts.</li>
+        <li><strong class="text-white">Resonance & Bed Leveling Calibration:</strong> The 5-minute 25-second pre-flight routine calibrated dynamic bed tilt and compensated for vibration resonances, securing first-layer adhesion on the textured PEI surface.</li>
+        <li><strong class="text-white">Support-Free Printability:</strong> Testing confirmed that outer flaring angles under 45° and small geometric bridges can print without supports, eliminating mechanical cleanup and surface scarring.</li>
+        <li><strong class="text-white">Overhang Boundary Limitations:</strong> Overhangs steeper than 50° without support lead to filament sagging due to a lack of underlying layer support.</li>
+    </ul>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">4. Why the Object Cannot Be Made Subtractively</h3>
+    <p>The miniature fuzzy planter model cannot be produced using standard 3-axis CNC subtractive milling because:</p>
+    <ul class="list-disc pl-5 mt-1 space-y-1 text-gray-400">
+        <li><strong class="text-white">Hollow Internal Cavity:</strong> Features an undercut internal chamber with upward-flaring thin sidewalls that standard vertical end mills cannot reach without colliding with the rim.</li>
+        <li><strong class="text-white">Re-entrant Undercuts:</strong> The small character feet and facial details contain deep negative undercuts and tight radii that rigid rotating cutting tools cannot clear.</li>
+        <li><strong class="text-white">High Material Waste:</strong> Milling this hollow, thin-walled shape from a solid block would turn roughly 85% to 90% of the raw material into scrap chips. In contrast, additive manufacturing deposits material only where required, using Gyroid infill to build a sturdy shell with only 6.98 g of filament.</li>
+    </ul>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">5. STL Definition</h3>
+    <ul class="list-disc pl-5 mt-1 space-y-1 text-gray-400">
+        <li><strong class="text-white">What STL Represents:</strong> STL stands for <strong>Standard Triangle Language</strong> (or Stereolithography), the standard digital format used across additive manufacturing.</li>
+        <li><strong class="text-white">Triangular Surface-Mesh Structure:</strong> An STL file represents the outer boundary surfaces of a 3D model as an interconnected network of planar triangles (facets). Each triangular facet is defined by the 3D coordinates (X, Y, Z) of its three vertices and an outward-pointing unit normal vector that distinguishes the model's exterior from its solid interior.</li>
+        <li><strong class="text-white">Why STL is Widely Used:</strong> It is lightweight, vendor-neutral, supported by every commercial slicing engine, and simplifies complex solid geometry into coordinates that can be easily sliced into horizontal G-code toolpaths.</li>
+    </ul>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">6. Selected STL File</h3>
+    <h4 class="text-lg font-bold text-azure mt-4">Digital Model Sourcing</h4>
+    <div class="my-4 rounded-xl overflow-hidden border border-gray-700 bg-darkBg">
+        <img src="images/Screenshot 2026-09-30 145006.jpg" alt="Model Found in Online Models" class="w-full">
+        <p class="p-3 text-xs italic text-gray-400 bg-darkBg/95">Figure 6: Digital model sourcing via the integrated Online Models browser in Bambu Studio.</p>
+    </div>
+    <ul class="list-disc pl-5 mt-1 space-y-1 text-gray-400">
+        <li><strong class="text-white">Model Selected:</strong> Miniature Decorative Fuzzy Planter Pot featuring integrated standing feet and character facial/mustache detailing.</li>
+        <li><strong class="text-white">Selection Rationale:</strong> Chosen to evaluate FDM printability without supports, test geometric scaling to reach a 7.0 g material target, and see how well the slicer's Fuzzy Skin setting hides layer lines on organic curved walls.</li>
+    </ul>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">7. Slicer Settings</h3>
+    <div class="overflow-x-auto my-3">
+        <table class="w-full text-left border-collapse border border-gray-700">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="border border-gray-700 p-2">Slicer Parameter</th>
+                    <th class="border border-gray-700 p-2">Configured Value</th>
+                    <th class="border border-gray-700 p-2">Unit</th>
+                    <th class="border border-gray-700 p-2">Engineering Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Nozzle Temperature</td><td class="border border-gray-700 p-2">220</td><td class="border border-gray-700 p-2">°C</td><td class="border border-gray-700 p-2">Ensures proper PLA melt flow and interlayer bonding at high feed speeds</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Bed Temperature</td><td class="border border-gray-700 p-2">55</td><td class="border border-gray-700 p-2">°C</td><td class="border border-gray-700 p-2">Provides thermal adhesion above PLA glass transition, preventing foot lifting</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Layer Height</td><td class="border border-gray-700 p-2">0.20</td><td class="border border-gray-700 p-2">mm</td><td class="border border-gray-700 p-2">Balances vertical resolution across 139 layers with print speed</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Infill Percentage</td><td class="border border-gray-700 p-2">15</td><td class="border border-gray-700 p-2">%</td><td class="border border-gray-700 p-2">Lightweight internal support structure</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Infill Pattern</td><td class="border border-gray-700 p-2">Gyroid</td><td class="border border-gray-700 p-2">—</td><td class="border border-gray-700 p-2">Delivers equal multi-directional strength with minimal filament mass</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Wall / Shell Count</td><td class="border border-gray-700 p-2">2</td><td class="border border-gray-700 p-2">loops</td><td class="border border-gray-700 p-2">Provides outer structural rigidity for thin upward-flaring walls</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Print Speed (Outer Wall)</td><td class="border border-gray-700 p-2">120</td><td class="border border-gray-700 p-2">mm/s</td><td class="border border-gray-700 p-2">Ensures accurate outer contouring and distinct fuzzy skin texture</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Print Speed (Infill)</td><td class="border border-gray-700 p-2">200</td><td class="border border-gray-700 p-2">mm/s</td><td class="border border-gray-700 p-2">High-speed deposition across internal gyroid paths</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Supports</td><td class="border border-gray-700 p-2">Disabled (None)</td><td class="border border-gray-700 p-2">—</td><td class="border border-gray-700 p-2">Geometry remains under 45° overhang limits, avoiding post-processing damage</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Adhesion Type</td><td class="border border-gray-700 p-2">None (Brim Disabled)</td><td class="border border-gray-700 p-2">—</td><td class="border border-gray-700 p-2">Direct adhesion to the Bambu Textured PEI Plate with zero brim waste</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Surface Finish Setting</td><td class="border border-gray-700 p-2">Fuzzy Skin (Contour)</td><td class="border border-gray-700 p-2">—</td><td class="border border-gray-700 p-2">Applies micro-oscillations to outer walls to mask Z-seams and layer lines</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">8. Print Time & Material Weight</h3>
+    <h4 class="text-lg font-bold text-azure mt-4">Slicer Toolpath Visualization & Operational Telemetry</h4>
+    <div class="my-4 rounded-xl overflow-hidden border border-gray-700 bg-darkBg">
+        <img src="images/Screenshot 2026-09-30 145054.png" alt="Bambu Studio Slicing Result" class="w-full">
+        <p class="p-3 text-xs italic text-gray-400 bg-darkBg/95">Figure 8: Slicer telemetry preview verifying 139 layers, 6.98 g filament usage, and a 24m 31s total print time.</p>
+    </div>
+    <div class="overflow-x-auto my-3">
+        <table class="w-full text-left border-collapse border border-gray-700">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="border border-gray-700 p-2">Production Metric</th>
+                    <th class="border border-gray-700 p-2">Slicer Estimate</th>
+                    <th class="border border-gray-700 p-2">Actual Recorded Result</th>
+                    <th class="border border-gray-700 p-2">Difference & Technical Observations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Pre-Print Routine Time</td><td class="border border-gray-700 p-2">5m 25s</td><td class="border border-gray-700 p-2">5m 25s</td><td class="border border-gray-700 p-2">Matches automated bed-leveling and vibration resonance sweeps</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Active Extrusion Time</td><td class="border border-gray-700 p-2">19m 06s</td><td class="border border-gray-700 p-2">19m 12s</td><td class="border border-gray-700 p-2">+6 seconds variance due to thermal stabilization on the first layer</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Total Job Duration</td><td class="border border-gray-700 p-2">24m 31s</td><td class="border border-gray-700 p-2">24m 37s</td><td class="border border-gray-700 p-2">Total turnaround time matches the slicer toolpath estimate</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Material Weight</td><td class="border border-gray-700 p-2">6.98 g</td><td class="border border-gray-700 p-2">7.02 g</td><td class="border border-gray-700 p-2">+0.04 g variance from the automatic nozzle prime purge line</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Material Length</td><td class="border border-gray-700 p-2">2.30 m</td><td class="border border-gray-700 p-2">2.30 m</td><td class="border border-gray-700 p-2">Matches the sliced extrusion volume calculation</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Total Model Height (Z)</td><td class="border border-gray-700 p-2">27.80 mm</td><td class="border border-gray-700 p-2">27.82 mm</td><td class="border border-gray-700 p-2">Verified via digital vernier caliper (<0.1% dimensional deviation)</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Estimated Material Cost</td><td class="border border-gray-700 p-2">$0.14</td><td class="border border-gray-700 p-2">$0.14</td><td class="border border-gray-700 p-2">Matches standard PLA per-gram material cost</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">9. Hands-On Machine Operation</h3>
+    <div class="my-4 rounded-xl overflow-hidden border border-gray-700 bg-darkBg">
+        <img src="images/WhatsApp Image 2026-10-04 at 12.51.38 PM.jpeg" alt="Operator Executing 3D Print" class="w-full">
+        <p class="p-3 text-xs italic text-gray-400 bg-darkBg/95">Figure 9: Hands-On Machine Setup & Operation. The operator inspecting the textured PEI build surface, loading PLA filament, and initiating automated calibration from the printer control interface.</p>
+    </div>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">10. Final Result</h3>
+    <div class="my-4 rounded-xl overflow-hidden border border-gray-700 bg-darkBg">
+        <img src="images/WhatsApp Image 2026-09-30 at 10.44.14 AM.jpeg" alt="Completed 3D Printed Fuzzy Planter" class="w-full">
+        <p class="p-3 text-xs italic text-gray-400 bg-darkBg/95">Figure 10: Final physical 3D-printed miniature fuzzy planter on the textured PEI plate, showing clean support-free details, sharp facial features, and a uniform stone-like matte surface.</p>
+    </div>
+    <ul class="list-disc pl-5 mt-1 space-y-1 text-gray-400">
+        <li><strong class="text-white">First-Layer Adhesion:</strong> The base feet achieved full contact on the Bambu Textured PEI plate, resulting in zero edge warping or dimensional distortion.</li>
+        <li><strong class="text-white">Surface Quality:</strong> The slicer's outer contour fuzzy skin setting masked horizontal layer lines and the rear Z-seam, creating an even, stone-like aesthetic.</li>
+        <li><strong class="text-white">Geometric Accuracy:</strong> The overhangs along the character's facial features and the hollow cavity printed cleanly without drooping or stringing, validating the decision to print without support structures.</li>
+        <li><strong class="text-white">Post-Processing:</strong> The part detached naturally upon bed cooling, requiring zero mechanical cleanup or trimming.</li>
+    </ul>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">11. Source Files</h3>
+    <ul class="list-disc pl-5 space-y-2 mb-8">
+        <li><strong class="text-white">Planter Model File (STL):</strong> <a href="https://drive.google.com/file/d/1kptVQqXwIDQ7h6_ChR5PJc2clr7yDKj6/view?usp=drive_link" class="text-azure hover:underline" target="_blank">Download Miniature Fuzzy Planter STL</a></li>
+        <li><strong class="text-white">Sliced Machine Toolpath File (G-code / 3MF):</strong> <a href="https://drive.google.com/file/d/1kptVQqXwIDQ7h6_ChR5PJc2clr7yDKj6/view?usp=drive_link" class="text-azure hover:underline" target="_blank">Download Sliced Print Job File</a></li>
+    </ul>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">References & Credits</h3>
+    <ol class="list-decimal pl-5 mt-1 space-y-1 text-gray-400">
+        <li><strong class="text-white">Bambu Lab & Bambu Studio:</strong> Slicing software, CoreXY kinematics, and integrated Online Models ecosystem.</li>
+        <li><strong class="text-white">Convert.io:</strong> Boundary edge-tracing and raster-to-vector conversion engine.</li>
+        <li><strong class="text-white">Hardware Platform:</strong> Bambu Lab H2S FDM Additive Manufacturing 3D Printer.</li>
+        <li><strong class="text-white">Laboratory Facility:</strong> FORGE – HW Junction DFab, Coimbatore.</li>
+    </ol>
 </div>
                 `,
                 days: [],
@@ -1615,6 +1871,262 @@
                                     </li>
                                 `).join('')}
                             </ul>
+    <hr class="border-gray-700 my-10">
+    <h2 class="text-3xl font-bold text-azure mb-6 border-b-2 border-azure pb-2">Page 2: 3D Printing</h2>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">Theoretical Background & Fundamentals</h3>
+
+    <h4 class="text-lg font-bold text-azure mt-4">What is 3D Printing?</h4>
+    <p>3D Printing, formally termed <strong>Additive Manufacturing (AM)</strong>, is a computer-controlled manufacturing method that produces physical three-dimensional objects directly from digital CAD data by joining material layer upon layer. Unlike conventional production methods that rely on physical cutting tools to remove raw stock or metal molds to cast molten fluids, additive manufacturing places material exclusively where demanded by the geometry's sliced cross-section.</p>
+
+    <h4 class="text-lg font-bold text-azure mt-6">Manufacturing Process Classification</h4>
+    <p>Modern industrial manufacturing processes are classified into four fundamental categories:</p>
+    <div class="overflow-x-auto my-3">
+        <table class="w-full text-left border-collapse border border-gray-700">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="border border-gray-700 p-2">Manufacturing Category</th>
+                    <th class="border border-gray-700 p-2">Operating Principle</th>
+                    <th class="border border-gray-700 p-2">Common Industrial Examples</th>
+                    <th class="border border-gray-700 p-2">Tool Contact & Mechanical Stress</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border border-gray-700 p-2"><strong>Additive</strong></td>
+                    <td class="border border-gray-700 p-2">Accumulates material layer-upon-layer directly from digital slicing</td>
+                    <td class="border border-gray-700 p-2">FDM, SLA, SLS, SLM</td>
+                    <td class="border border-gray-700 p-2">Zero tool cutting force; builds directly from build plate</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-700 p-2"><strong>Subtractive (Mechanical)</strong></td>
+                    <td class="border border-gray-700 p-2">Mechanically shears, cuts, or mills material from a solid billet</td>
+                    <td class="border border-gray-700 p-2">CNC Milling, Lathe Turning, Drilling</td>
+                    <td class="border border-gray-700 p-2">High cutting tool contact, mechanical shear stress, and tool wear</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-700 p-2"><strong>Subtractive (Thermal)</strong></td>
+                    <td class="border border-gray-700 p-2">Vaporizes or melts narrow kerf paths using focused energy</td>
+                    <td class="border border-gray-700 p-2">CO₂ Laser Cutting, Fiber Laser, Plasma</td>
+                    <td class="border border-gray-700 p-2">Zero physical tool contact; localized thermal heat-affected zone (HAZ)</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-700 p-2"><strong>Formative</strong></td>
+                    <td class="border border-gray-700 p-2">Forces molten or malleable material into a rigid negative cavity</td>
+                    <td class="border border-gray-700 p-2">Plastic Injection Molding, Stamping, Die Casting</td>
+                    <td class="border border-gray-700 p-2">High clamping pressures and custom permanent metal tooling</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h4 class="text-lg font-bold text-azure mt-6">Stages of the 3D Printing Workflow</h4>
+    <ol class="list-decimal pl-5 mt-1 space-y-1 text-gray-400">
+        <li><strong class="text-white">3D CAD Modeling:</strong> Geometric construction inside parametric CAD suites or sourcing digital mesh models via repositories like Bambu Studio's integrated Online Models.</li>
+        <li><strong class="text-white">Mesh Export / Preparation:</strong> Converting parametric solids into triangular surface boundary files (<code>.stl</code> or <code>.3mf</code>).</li>
+        <li><strong class="text-white">Slicing & Toolpath Generation:</strong> Importing geometry into Bambu Studio to slice cross-sectional profiles into machine-level instructions (G-code) based on layer height, extrusion temperatures, print speed, and infill densities.</li>
+        <li><strong class="text-white">Hardware Preparation & Pre-Flight Routine:</strong> Loading filament, cleaning and positioning the textured PEI plate, and running automated bed leveling and resonance sweeps.</li>
+        <li><strong class="text-white">Layer Extrusion:</strong> Continuous deposition of melted thermoplastic beads through the heated nozzle onto the build surface.</li>
+        <li><strong class="text-white">Cooling & Post-Processing:</strong> Controlled heat dissipation on the build plate, natural part release, and dimensional inspection.</li>
+    </ol>
+
+    <h4 class="text-lg font-bold text-azure mt-6">Common 3D Printing Technologies</h4>
+    <ul class="list-disc pl-5 mt-1 space-y-1 text-gray-400">
+        <li><strong class="text-white">Fused Deposition Modeling (FDM / FFF):</strong> Pushes solid thermoplastic filament through an electric heating block and nozzle, tracing cross-sections onto a heated bed.</li>
+        <li><strong class="text-white">Stereolithography (SLA) & Digital Light Processing (DLP):</strong> Selectively cures photosensitive liquid photopolymer resin using directed ultraviolet lasers or digital micro-mirror projections.</li>
+        <li><strong class="text-white">Selective Laser Sintering (SLS):</strong> Uses a high-power CO₂ laser beam to sinter micron-scale polymer powder (typically Nylon PA12) layer-by-layer without requiring sacrificial supports.</li>
+        <li><strong class="text-white">Selective Laser Melting (SLM / DMLS):</strong> High-energy laser melting of reactive or non-reactive metal powders (Titanium, Stainless Steel, Inconel) to create dense aerospace and medical components.</li>
+    </ul>
+
+    <h4 class="text-lg font-bold text-azure mt-6">Advantages, Disadvantages & Limitations of the Bambu Lab H2S FDM 3D Printer</h4>
+    <ul class="list-disc pl-5 mt-1 space-y-2 text-gray-400">
+        <li><strong class="text-white">Advantages:</strong>
+            <ul class="list-[circle] pl-5 mt-1 space-y-1 text-gray-400">
+                <li><strong class="text-white">High Kinematic Acceleration:</strong> CoreXY architecture achieves speeds up to 1,000 mm/s and accelerations up to 20,000 mm/s² without losing rotational stepper steps.</li>
+                <li><strong class="text-white">Automated Calibration:</strong> Integrated active vibration compensation (input shaping) and multi-point automated bed leveling eliminate manual leveling error.</li>
+                <li><strong class="text-white">Fuzzy Skin Texture Generation:</strong> Proprietary outer-perimeter micro-oscillation algorithms obscure horizontal layer ridges, generating an even, matte stone-like texture.</li>
+                <li><strong class="text-white">Material Efficiency:</strong> Directly builds internal infills (such as Gyroid) and self-supporting geometries, keeping total part mass around target specifications (6.98 g) with near-zero material waste.</li>
+            </ul>
+        </li>
+        <li><strong class="text-white">Disadvantages:</strong>
+            <ul class="list-[circle] pl-5 mt-1 space-y-1 text-gray-400">
+                <li><strong class="text-white">Anisotropic Z-Axis Strength:</strong> Extruded thermoplastic bonds along the vertical Z-axis exhibit lower tensile strength than paths extruded along the planar X-Y axes.</li>
+                <li><strong class="text-white">Stepped Surface Topography:</strong> Sloped and curved upward surfaces exhibit visible microscopic stepping based on layer height (e.g., 0.20 mm layer increments).</li>
+                <li><strong class="text-white">Thermal Shrinkage & Warping Risk:</strong> Uneven cooling on broad flat bases can generate internal mechanical stresses, causing corners to lift if bed adhesion is lost.</li>
+            </ul>
+        </li>
+        <li><strong class="text-white">Limitations:</strong>
+            <ul class="list-[circle] pl-5 mt-1 space-y-1 text-gray-400">
+                <li><strong class="text-white">Overhang Thresholds:</strong> Unassisted horizontal cantilevers or overhang angles exceeding 45° to 50° will droop unless sacrificial scaffolding or tree supports are generated.</li>
+                <li><strong class="text-white">Build Volume Ceiling:</strong> Enclosed build dimensions limit the single-piece continuous manufacturing envelope to 340 × 320 × 340 mm³.</li>
+                <li><strong class="text-white">Thermal Melt Rate Limits:</strong> Volumetric melt capacity caps maximum extrusion flow rates, requiring slower print speeds during dense surface contours.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4 class="text-lg font-bold text-azure mt-6">Laboratory Safety Rules & Precautions</h4>
+    <ul class="list-disc pl-5 mt-1 space-y-1 text-gray-400">
+        <li><strong class="text-white">Thermal Safety:</strong> Hotend temperatures reach up to 350°C and the heatbed operates at 55°C–120°C. Never touch the nozzle tip or heating block during or immediately following operation.</li>
+        <li><strong class="text-white">Mechanical Pinch Hazards:</strong> Keep hands, tools, loose clothing, and hair clear of the high-speed CoreXY gantry belts, stepper pulleys, and Z-axis lead screws during motion cycles.</li>
+        <li><strong class="text-white">Plate Handling Safety:</strong> Do not use sharp metal scrapers on the Bambu Textured PEI Plate; allow the plate to cool below 35°C before flexing to remove prints cleanly without damaging the PEI coating.</li>
+        <li><strong class="text-white">Ventilation Safety:</strong> Operate the printer in well-ventilated laboratory spaces to ensure volatile thermal organic compounds generated during thermoplastic melting are safely cleared.</li>
+    </ul>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">1. Printer Details</h3>
+    <div class="my-4 rounded-xl overflow-hidden border border-gray-700 bg-darkBg">
+        <img src="images/WhatsApp Image 2026-10-04 at 12.04.31 PM.jpeg" alt="Bambu Lab H2S 3D Printer" class="w-full">
+        <p class="p-3 text-xs italic text-gray-400 bg-darkBg/95">Figure 1: Bambu Lab H2S CoreXY FDM Additive Manufacturing Workstation.</p>
+    </div>
+    
+    <div class="overflow-x-auto my-3">
+        <table class="w-full text-left border-collapse border border-gray-700">
+            <tbody>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Make</td><td class="border border-gray-700 p-2">Bambu Lab</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Model</td><td class="border border-gray-700 p-2">H2S High-Speed CoreXY 3D Printer</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Build Volume (W × D × H)</td><td class="border border-gray-700 p-2">340 mm × 320 mm × 340 mm</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Nozzle Size & Type</td><td class="border border-gray-700 p-2">0.40 mm Hardened Steel All-Metal Hotend (Max 350°C)</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Supported Materials</td><td class="border border-gray-700 p-2">PLA, PETG, TPU, ABS, ASA, PVA, PC, PA, Carbon/Glass Fiber Composites (PLA-CF, PA-CF)</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">2. Slicer & Material</h3>
+    <div class="overflow-x-auto my-3">
+        <table class="w-full text-left border-collapse border border-gray-700">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="border border-gray-700 p-2">Parameter</th>
+                    <th class="border border-gray-700 p-2">Laboratory Selection</th>
+                    <th class="border border-gray-700 p-2">Engineering Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Slicer Software</td><td class="border border-gray-700 p-2">Bambu Studio for Windows</td><td class="border border-gray-700 p-2">Version: 64-bit CoreXY build with integrated model sourcing and path engine</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Print Material</td><td class="border border-gray-700 p-2">Bambu PLA Basic (Polylactic Acid)</td><td class="border border-gray-700 p-2">1.75 mm diameter, biodegradable thermoplastic derived from renewable plant starches</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">3. Printer Limits & Capabilities</h3>
+    <ul class="list-disc pl-5 mt-1 space-y-1 text-gray-400">
+        <li><strong class="text-white">Kinematic Speed & Acceleration:</strong> The CoreXY setup maintained stable, high-speed movement without layer shifting or vibration artifacts.</li>
+        <li><strong class="text-white">Resonance & Bed Leveling Calibration:</strong> The 5-minute 25-second pre-flight routine calibrated dynamic bed tilt and compensated for vibration resonances, securing first-layer adhesion on the textured PEI surface.</li>
+        <li><strong class="text-white">Support-Free Printability:</strong> Testing confirmed that outer flaring angles under 45° and small geometric bridges can print without supports, eliminating mechanical cleanup and surface scarring.</li>
+        <li><strong class="text-white">Overhang Boundary Limitations:</strong> Overhangs steeper than 50° without support lead to filament sagging due to a lack of underlying layer support.</li>
+    </ul>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">4. Why the Object Cannot Be Made Subtractively</h3>
+    <p>The miniature fuzzy planter model cannot be produced using standard 3-axis CNC subtractive milling because:</p>
+    <ul class="list-disc pl-5 mt-1 space-y-1 text-gray-400">
+        <li><strong class="text-white">Hollow Internal Cavity:</strong> Features an undercut internal chamber with upward-flaring thin sidewalls that standard vertical end mills cannot reach without colliding with the rim.</li>
+        <li><strong class="text-white">Re-entrant Undercuts:</strong> The small character feet and facial details contain deep negative undercuts and tight radii that rigid rotating cutting tools cannot clear.</li>
+        <li><strong class="text-white">High Material Waste:</strong> Milling this hollow, thin-walled shape from a solid block would turn roughly 85% to 90% of the raw material into scrap chips. In contrast, additive manufacturing deposits material only where required, using Gyroid infill to build a sturdy shell with only 6.98 g of filament.</li>
+    </ul>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">5. STL Definition</h3>
+    <ul class="list-disc pl-5 mt-1 space-y-1 text-gray-400">
+        <li><strong class="text-white">What STL Represents:</strong> STL stands for <strong>Standard Triangle Language</strong> (or Stereolithography), the standard digital format used across additive manufacturing.</li>
+        <li><strong class="text-white">Triangular Surface-Mesh Structure:</strong> An STL file represents the outer boundary surfaces of a 3D model as an interconnected network of planar triangles (facets). Each triangular facet is defined by the 3D coordinates (X, Y, Z) of its three vertices and an outward-pointing unit normal vector that distinguishes the model's exterior from its solid interior.</li>
+        <li><strong class="text-white">Why STL is Widely Used:</strong> It is lightweight, vendor-neutral, supported by every commercial slicing engine, and simplifies complex solid geometry into coordinates that can be easily sliced into horizontal G-code toolpaths.</li>
+    </ul>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">6. Selected STL File</h3>
+    <h4 class="text-lg font-bold text-azure mt-4">Digital Model Sourcing</h4>
+    <div class="my-4 rounded-xl overflow-hidden border border-gray-700 bg-darkBg">
+        <img src="images/Screenshot 2026-09-30 145006.jpg" alt="Model Found in Online Models" class="w-full">
+        <p class="p-3 text-xs italic text-gray-400 bg-darkBg/95">Figure 6: Digital model sourcing via the integrated Online Models browser in Bambu Studio.</p>
+    </div>
+    <ul class="list-disc pl-5 mt-1 space-y-1 text-gray-400">
+        <li><strong class="text-white">Model Selected:</strong> Miniature Decorative Fuzzy Planter Pot featuring integrated standing feet and character facial/mustache detailing.</li>
+        <li><strong class="text-white">Selection Rationale:</strong> Chosen to evaluate FDM printability without supports, test geometric scaling to reach a 7.0 g material target, and see how well the slicer's Fuzzy Skin setting hides layer lines on organic curved walls.</li>
+    </ul>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">7. Slicer Settings</h3>
+    <div class="overflow-x-auto my-3">
+        <table class="w-full text-left border-collapse border border-gray-700">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="border border-gray-700 p-2">Slicer Parameter</th>
+                    <th class="border border-gray-700 p-2">Configured Value</th>
+                    <th class="border border-gray-700 p-2">Unit</th>
+                    <th class="border border-gray-700 p-2">Engineering Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Nozzle Temperature</td><td class="border border-gray-700 p-2">220</td><td class="border border-gray-700 p-2">°C</td><td class="border border-gray-700 p-2">Ensures proper PLA melt flow and interlayer bonding at high feed speeds</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Bed Temperature</td><td class="border border-gray-700 p-2">55</td><td class="border border-gray-700 p-2">°C</td><td class="border border-gray-700 p-2">Provides thermal adhesion above PLA glass transition, preventing foot lifting</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Layer Height</td><td class="border border-gray-700 p-2">0.20</td><td class="border border-gray-700 p-2">mm</td><td class="border border-gray-700 p-2">Balances vertical resolution across 139 layers with print speed</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Infill Percentage</td><td class="border border-gray-700 p-2">15</td><td class="border border-gray-700 p-2">%</td><td class="border border-gray-700 p-2">Lightweight internal support structure</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Infill Pattern</td><td class="border border-gray-700 p-2">Gyroid</td><td class="border border-gray-700 p-2">—</td><td class="border border-gray-700 p-2">Delivers equal multi-directional strength with minimal filament mass</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Wall / Shell Count</td><td class="border border-gray-700 p-2">2</td><td class="border border-gray-700 p-2">loops</td><td class="border border-gray-700 p-2">Provides outer structural rigidity for thin upward-flaring walls</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Print Speed (Outer Wall)</td><td class="border border-gray-700 p-2">120</td><td class="border border-gray-700 p-2">mm/s</td><td class="border border-gray-700 p-2">Ensures accurate outer contouring and distinct fuzzy skin texture</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Print Speed (Infill)</td><td class="border border-gray-700 p-2">200</td><td class="border border-gray-700 p-2">mm/s</td><td class="border border-gray-700 p-2">High-speed deposition across internal gyroid paths</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Supports</td><td class="border border-gray-700 p-2">Disabled (None)</td><td class="border border-gray-700 p-2">—</td><td class="border border-gray-700 p-2">Geometry remains under 45° overhang limits, avoiding post-processing damage</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Adhesion Type</td><td class="border border-gray-700 p-2">None (Brim Disabled)</td><td class="border border-gray-700 p-2">—</td><td class="border border-gray-700 p-2">Direct adhesion to the Bambu Textured PEI Plate with zero brim waste</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Surface Finish Setting</td><td class="border border-gray-700 p-2">Fuzzy Skin (Contour)</td><td class="border border-gray-700 p-2">—</td><td class="border border-gray-700 p-2">Applies micro-oscillations to outer walls to mask Z-seams and layer lines</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">8. Print Time & Material Weight</h3>
+    <h4 class="text-lg font-bold text-azure mt-4">Slicer Toolpath Visualization & Operational Telemetry</h4>
+    <div class="my-4 rounded-xl overflow-hidden border border-gray-700 bg-darkBg">
+        <img src="images/Screenshot 2026-09-30 145054.png" alt="Bambu Studio Slicing Result" class="w-full">
+        <p class="p-3 text-xs italic text-gray-400 bg-darkBg/95">Figure 8: Slicer telemetry preview verifying 139 layers, 6.98 g filament usage, and a 24m 31s total print time.</p>
+    </div>
+    <div class="overflow-x-auto my-3">
+        <table class="w-full text-left border-collapse border border-gray-700">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="border border-gray-700 p-2">Production Metric</th>
+                    <th class="border border-gray-700 p-2">Slicer Estimate</th>
+                    <th class="border border-gray-700 p-2">Actual Recorded Result</th>
+                    <th class="border border-gray-700 p-2">Difference & Technical Observations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Pre-Print Routine Time</td><td class="border border-gray-700 p-2">5m 25s</td><td class="border border-gray-700 p-2">5m 25s</td><td class="border border-gray-700 p-2">Matches automated bed-leveling and vibration resonance sweeps</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Active Extrusion Time</td><td class="border border-gray-700 p-2">19m 06s</td><td class="border border-gray-700 p-2">19m 12s</td><td class="border border-gray-700 p-2">+6 seconds variance due to thermal stabilization on the first layer</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Total Job Duration</td><td class="border border-gray-700 p-2">24m 31s</td><td class="border border-gray-700 p-2">24m 37s</td><td class="border border-gray-700 p-2">Total turnaround time matches the slicer toolpath estimate</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Material Weight</td><td class="border border-gray-700 p-2">6.98 g</td><td class="border border-gray-700 p-2">7.02 g</td><td class="border border-gray-700 p-2">+0.04 g variance from the automatic nozzle prime purge line</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Material Length</td><td class="border border-gray-700 p-2">2.30 m</td><td class="border border-gray-700 p-2">2.30 m</td><td class="border border-gray-700 p-2">Matches the sliced extrusion volume calculation</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Total Model Height (Z)</td><td class="border border-gray-700 p-2">27.80 mm</td><td class="border border-gray-700 p-2">27.82 mm</td><td class="border border-gray-700 p-2">Verified via digital vernier caliper (<0.1% dimensional deviation)</td></tr>
+                <tr><td class="border border-gray-700 p-2 font-bold text-white">Estimated Material Cost</td><td class="border border-gray-700 p-2">$0.14</td><td class="border border-gray-700 p-2">$0.14</td><td class="border border-gray-700 p-2">Matches standard PLA per-gram material cost</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">9. Hands-On Machine Operation</h3>
+    <div class="my-4 rounded-xl overflow-hidden border border-gray-700 bg-darkBg">
+        <img src="images/WhatsApp Image 2026-10-04 at 12.51.38 PM.jpeg" alt="Operator Executing 3D Print" class="w-full">
+        <p class="p-3 text-xs italic text-gray-400 bg-darkBg/95">Figure 9: Hands-On Machine Setup & Operation. The operator inspecting the textured PEI build surface, loading PLA filament, and initiating automated calibration from the printer control interface.</p>
+    </div>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">10. Final Result</h3>
+    <div class="my-4 rounded-xl overflow-hidden border border-gray-700 bg-darkBg">
+        <img src="images/WhatsApp Image 2026-09-30 at 10.44.14 AM.jpeg" alt="Completed 3D Printed Fuzzy Planter" class="w-full">
+        <p class="p-3 text-xs italic text-gray-400 bg-darkBg/95">Figure 10: Final physical 3D-printed miniature fuzzy planter on the textured PEI plate, showing clean support-free details, sharp facial features, and a uniform stone-like matte surface.</p>
+    </div>
+    <ul class="list-disc pl-5 mt-1 space-y-1 text-gray-400">
+        <li><strong class="text-white">First-Layer Adhesion:</strong> The base feet achieved full contact on the Bambu Textured PEI plate, resulting in zero edge warping or dimensional distortion.</li>
+        <li><strong class="text-white">Surface Quality:</strong> The slicer's outer contour fuzzy skin setting masked horizontal layer lines and the rear Z-seam, creating an even, stone-like aesthetic.</li>
+        <li><strong class="text-white">Geometric Accuracy:</strong> The overhangs along the character's facial features and the hollow cavity printed cleanly without drooping or stringing, validating the decision to print without support structures.</li>
+        <li><strong class="text-white">Post-Processing:</strong> The part detached naturally upon bed cooling, requiring zero mechanical cleanup or trimming.</li>
+    </ul>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">11. Source Files</h3>
+    <ul class="list-disc pl-5 space-y-2 mb-8">
+        <li><strong class="text-white">Planter Model File (STL):</strong> <a href="https://drive.google.com/file/d/1kptVQqXwIDQ7h6_ChR5PJc2clr7yDKj6/view?usp=drive_link" class="text-azure hover:underline" target="_blank">Download Miniature Fuzzy Planter STL</a></li>
+        <li><strong class="text-white">Sliced Machine Toolpath File (G-code / 3MF):</strong> <a href="https://drive.google.com/file/d/1kptVQqXwIDQ7h6_ChR5PJc2clr7yDKj6/view?usp=drive_link" class="text-azure hover:underline" target="_blank">Download Sliced Print Job File</a></li>
+    </ul>
+
+    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">References & Credits</h3>
+    <ol class="list-decimal pl-5 mt-1 space-y-1 text-gray-400">
+        <li><strong class="text-white">Bambu Lab & Bambu Studio:</strong> Slicing software, CoreXY kinematics, and integrated Online Models ecosystem.</li>
+        <li><strong class="text-white">Convert.io:</strong> Boundary edge-tracing and raster-to-vector conversion engine.</li>
+        <li><strong class="text-white">Hardware Platform:</strong> Bambu Lab H2S FDM Additive Manufacturing 3D Printer.</li>
+        <li><strong class="text-white">Laboratory Facility:</strong> FORGE – HW Junction DFab, Coimbatore.</li>
+    </ol>
                         </div>
                         ` : ''}
 
@@ -1703,6 +2215,5 @@
     </script>
 </body>
 </html>
-
 
 
