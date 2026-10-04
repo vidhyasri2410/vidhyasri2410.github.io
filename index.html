@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -986,6 +986,16 @@
                 overview: "Explored Laser Cutting & Engraving, understanding its types, advantages, and creating practical case studies like keychain medallions.",
                 customHtml: `
 <div class="space-y-6 text-gray-300 text-sm md:text-base leading-relaxed">
+    <div class="flex flex-wrap gap-3 mb-6 bg-darkBg border border-gray-700 p-2 rounded-xl sticky top-0 z-10 shadow-lg">
+        <button id="btn-laser" onclick="document.getElementById('laser-cutting-section').style.display='block'; document.getElementById('3d-printing-section').style.display='none'; this.classList.add('bg-azure', 'text-white'); this.classList.remove('text-gray-400', 'hover:bg-gray-800'); document.getElementById('btn-3d').classList.add('text-gray-400', 'hover:bg-gray-800'); document.getElementById('btn-3d').classList.remove('bg-azure', 'text-white');" class="flex-1 py-3 px-4 rounded-lg font-bold text-sm md:text-base transition-all duration-300 bg-azure text-white text-center flex items-center justify-center gap-2">
+            <i class="fa-solid fa-fire"></i> Laser Cutting
+        </button>
+        <button id="btn-3d" onclick="document.getElementById('3d-printing-section').style.display='block'; document.getElementById('laser-cutting-section').style.display='none'; this.classList.add('bg-azure', 'text-white'); this.classList.remove('text-gray-400', 'hover:bg-gray-800'); document.getElementById('btn-laser').classList.add('text-gray-400', 'hover:bg-gray-800'); document.getElementById('btn-laser').classList.remove('bg-azure', 'text-white');" class="flex-1 py-3 px-4 rounded-lg font-bold text-sm md:text-base transition-all duration-300 text-gray-400 hover:bg-gray-800 text-center flex items-center justify-center gap-2">
+            <i class="fa-solid fa-cubes"></i> 3D Printing
+        </button>
+    </div>
+
+    <div id="laser-cutting-section">
     <h3 class="text-2xl font-bold text-white mb-2 border-b border-gray-700 pb-2 mt-4">Theoretical Background & Fundamentals</h3>
     
     <h4 class="text-lg font-bold text-azure mt-4">What is Laser Cutting & Engraving?</h4>
@@ -1366,10 +1376,10 @@
             </ul>
         </li>
     </ol>
-    <hr class="border-gray-700 my-10">
-    <h2 class="text-3xl font-bold text-azure mb-6 border-b-2 border-azure pb-2">Page 2: 3D Printing</h2>
+    </div>
 
-    <h3 class="text-2xl font-bold text-white mb-2 mt-8 border-b border-gray-700 pb-2">Theoretical Background & Fundamentals</h3>
+    <div id="3d-printing-section" style="display: none;">
+    <h3 class="text-2xl font-bold text-white mb-2 mt-4 border-b border-gray-700 pb-2">Theoretical Background & Fundamentals</h3>
 
     <h4 class="text-lg font-bold text-azure mt-4">What is 3D Printing?</h4>
     <p>3D Printing, formally termed <strong>Additive Manufacturing (AM)</strong>, is a computer-controlled manufacturing method that produces physical three-dimensional objects directly from digital CAD data by joining material layer upon layer. Unlike conventional production methods that rely on physical cutting tools to remove raw stock or metal molds to cast molten fluids, additive manufacturing places material exclusively where demanded by the geometry's sliced cross-section.</p>
@@ -1628,6 +1638,7 @@
         <li><strong class="text-white">Hardware Platform:</strong> Bambu Lab H2S FDM Additive Manufacturing 3D Printer.</li>
         <li><strong class="text-white">Laboratory Facility:</strong> FORGE ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ HW Junction DFab, Coimbatore.</li>
     </ol>
+    </div>
 </div>
                 `,
                 days: [],
