@@ -973,56 +973,14 @@
                     "Prototyping & Design: Bridging insights to functional designs in Figma and Fusion 360."
                 ]
             },
-            {
-                week: 6,
-                title: "Week 06",
-                subtitle: "LASER CUTTING & Fabrication",
-                phase: 2,
-                phaseLabel: "Phase 02",
-                slug: "week-06",
-                status: "Completed",
-                badgeText: "Field Notes Available",
-                quote: "Laser Cutting is a thermal-based, non-contact subtractive manufacturing process...",
-                overview: "Explored Laser Cutting & Engraving, understanding its types, advantages, and creating practical case studies like keychain medallions.",
-                days: [
-                    {
-                        day: "Day 1",
-                        title: "Intro to Laser Cutting & Classification",
-                        icon: "fa-solid fa-fire-flame-curved",
-                        iconColor: "text-mulberry",
-                        description: "Learned the working principle of subtractive thermal manufacturing and explored CO2, Fiber, and Diode lasers. Understood the advantages like superior edge quality and high precision, alongside limitations like material-specific risks."
-                    },
-                    {
-                        day: "Day 2",
+            
                         title: "Workflow & Software Preparation",
                         icon: "fa-solid fa-laptop-code",
                         iconColor: "text-azure",
                         description: "Used RDWorksV8 to convert vectors to .dxf, constrain dimensions, and apply color-layer process separation. Configured engrave (surface) and cut (perimeter) layers."
                     },
-                    {
-                        day: "Day 3",
-                        title: "Case Study 1: Stay Curious Keychain",
-                        icon: "fa-solid fa-circle-notch",
-                        iconColor: "text-kobi",
-                        description: "Designed a 50mm clear acrylic keychain. The vector rasterization produced an evenly frosted surface, and the contour severed cleanly yielding flame-polished edges."
-                    },
-                    {
-                        day: "Day 4",
-                        title: "Case Study 2: Hogwarts Crest",
-                        icon: "fa-brands fa-d-and-d",
-                        iconColor: "text-emerald-400",
-                        description: "Successfully printed the intricate Hogwarts crest on a rectangular acrylic base, maintaining micro-legibility within a 50mm boundary."
-                    }
-                ],
-                gallery: [
-                ],
-                keyTakeaways: [
-                    "Thermal Subtractive Manufacturing: Mastered non-contact precision cutting and engraving.",
-                    "Layer Configuration: Effectively separated engraving (high speed, low power) from cutting (low speed, high power).",
-                    "Dimensional Constraints: Scaled complex designs to strict 50mm physical envelopes without losing detail."
-                ]
-            },
-            ...Array.from({ length: 14 }, (_, i) => {
+                    
+                ...Array.from({ length: 14 }, (_, i) => {
                 const weekNum = i + 7;
                 const phaseNum = Math.ceil(weekNum / 5);
                 return {
